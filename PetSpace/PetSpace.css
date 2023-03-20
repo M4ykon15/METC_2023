@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+
 html,
 body {
     margin: 0;
@@ -8,6 +9,7 @@ body {
     font-size: 62.5%;
     font-size: 10px;
 }
+
 /*-- Inspiration taken from abdo steif -->
 /* --> https://codepen.io/abdosteif/pen/bRoyMb?editors=1100*/
 
@@ -78,7 +80,7 @@ body {
     height: 100vh;
     background-image: url(https://images.unsplash.com/photo-1498550744921-75f79806b8a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b0f6908fa5e81286213c7211276e6b3d&auto=format&fit=crop&w=1500&q=80);
     background-position: center top;
-	background-size:cover;
+    background-size: cover;
 }
 
 .navTrigger {
@@ -105,18 +107,22 @@ body {
     .navTrigger {
         display: block;
     }
+
     .nav div.logo {
         margin-left: 15px;
     }
+
     .nav div.main_list {
         width: 100%;
         height: 0;
         overflow: hidden;
     }
+
     .nav div.show_list {
         height: auto;
         display: none;
     }
+
     .nav div.main_list ul {
         flex-direction: column;
         width: 100%;
@@ -128,16 +134,19 @@ body {
         /*same background color of navbar*/
         background-position: center top;
     }
+
     .nav div.main_list ul li {
         width: 100%;
         text-align: right;
     }
+
     .nav div.main_list ul li a {
         text-align: center;
         width: 100%;
         font-size: 3rem;
         padding: 20px;
     }
+
     .nav div.media_button {
         display: block;
     }
@@ -208,6 +217,7 @@ body {
     50% {
         -webkit-transform: rotate(0deg);
     }
+
     100% {
         -webkit-transform: rotate(45deg);
     }
@@ -217,6 +227,7 @@ body {
     50% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(45deg);
     }
@@ -226,6 +237,7 @@ body {
     50% {
         -webkit-transform: rotate(0deg);
     }
+
     100% {
         -webkit-transform: rotate(45deg);
     }
@@ -235,6 +247,7 @@ body {
     50% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(45deg);
     }
@@ -244,9 +257,11 @@ body {
     0% {
         -webkit-transform: translateY(0px) rotate(0deg);
     }
+
     50% {
         -webkit-transform: translateY(9px) rotate(0deg);
     }
+
     100% {
         -webkit-transform: translateY(9px) rotate(135deg);
     }
@@ -256,9 +271,11 @@ body {
     0% {
         transform: translateY(0px) rotate(0deg);
     }
+
     50% {
         transform: translateY(9px) rotate(0deg);
     }
+
     100% {
         transform: translateY(9px) rotate(135deg);
     }
@@ -268,9 +285,11 @@ body {
     0% {
         -webkit-transform: translateY(0px) rotate(0deg);
     }
+
     50% {
         -webkit-transform: translateY(9px) rotate(0deg);
     }
+
     100% {
         -webkit-transform: translateY(9px) rotate(135deg);
     }
@@ -280,9 +299,11 @@ body {
     0% {
         transform: translateY(0px) rotate(0deg);
     }
+
     50% {
         transform: translateY(9px) rotate(0deg);
     }
+
     100% {
         transform: translateY(9px) rotate(135deg);
     }
@@ -292,9 +313,11 @@ body {
     0% {
         -webkit-transform: translateY(0px) rotate(0deg);
     }
+
     50% {
         -webkit-transform: translateY(-9px) rotate(0deg);
     }
+
     100% {
         -webkit-transform: translateY(-9px) rotate(135deg);
     }
@@ -304,9 +327,11 @@ body {
     0% {
         transform: translateY(0px) rotate(0deg);
     }
+
     50% {
         transform: translateY(-9px) rotate(0deg);
     }
+
     100% {
         transform: translateY(-9px) rotate(135deg);
     }
@@ -316,9 +341,11 @@ body {
     0% {
         -webkit-transform: translateY(0px) rotate(0deg);
     }
+
     50% {
         -webkit-transform: translateY(-9px) rotate(0deg);
     }
+
     100% {
         -webkit-transform: translateY(-9px) rotate(135deg);
     }
@@ -328,9 +355,11 @@ body {
     0% {
         transform: translateY(0px) rotate(0deg);
     }
+
     50% {
         transform: translateY(-9px) rotate(0deg);
     }
+
     100% {
         transform: translateY(-9px) rotate(135deg);
     }
@@ -346,25 +375,29 @@ body {
 
 
 .myH2 {
-	text-align:center;
-	font-size: 4rem;
+    text-align: center;
+    font-size: 4rem;
 }
+
 .myP {
-	text-align: justify;
-	padding-left:15%;
-	padding-right:15%;
-	font-size: 20px;
+    text-align: justify;
+    padding-left: 15%;
+    padding-right: 15%;
+    font-size: 20px;
 }
-@media all and (max-width:700px){
-	.myP {
-		padding:2%;
-	}
+
+@media all and (max-width:700px) {
+    .myP {
+        padding: 2%;
+    }
 }
-.carousel-inner > .carousel-item > img {
+
+.carousel-inner>.carousel-item>img {
     width: 700px;
-    height: 600px; 
-  }
-  .modal-backdrop {
+    height: 600px;
+}
+
+.modal-backdrop {
     position: relative;
     top: 0;
     right: 0;
@@ -373,6 +406,7 @@ body {
     z-index: 999999;
     background-color: #000;
 }
+
 .close {
     float: right;
     font-size: 5rem;
@@ -382,6 +416,7 @@ body {
     text-shadow: 0 1px 0 #fff;
     opacity: .5;
 }
+
 label {
     display: inline-block;
     margin-bottom: 1.5rem;
@@ -394,10 +429,12 @@ label {
     line-height: 30px;
     text-align: center;
 }
+
 label {
     display: table-cell;
     margin-bottom: 1.5rem;
 }
+
 label {
     margin: 0;
     font-size: 1.4rem;
@@ -407,10 +444,13 @@ label {
     text-align: left;
     background-color: #fff;
 }
-.small, small {
+
+.small,
+small {
     font-size: 100%;
     font-weight: 600;
 }
+
 .nav {
     width: 100%;
     height: 65px;
@@ -418,6 +458,7 @@ label {
     line-height: 60px;
     text-align: center;
 }
+
 body {
     background-color: #dee2e6e3;
 }
