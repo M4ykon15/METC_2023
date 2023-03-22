@@ -470,8 +470,8 @@ body {
 
 .center-card {
     width: 100vw;
-    height: 500px;
-    margin: 50px 0;
+    height: 530px;
+    margin: -50px 0;
     display: flex;
     justify-content: center;
     align-items: center;
