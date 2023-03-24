@@ -465,7 +465,7 @@ body {
 
 .text-card {
     height: 400px;
-    padding: 15px;
+    padding: 10px;
 }
 
 .center-card {
@@ -487,3 +487,14 @@ body {
     align-items: center ;
     box-sizing: border-box;
 }
+
+.carousel-inner1>.carousel-item>img {
+    width: 400px;
+    height: 200px;
+}
+
+
+
+
+
+
