@@ -152,10 +152,6 @@ body {
     }
 }
 
-
-/* Animation */
-/* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
-
 .navTrigger {
     cursor: pointer;
     width: 30px;
@@ -489,12 +485,7 @@ body {
 }
 
 .carousel-inner1>.carousel-item>img {
-    width: 400px;
+    width: 300px;
     height: 200px;
 }
-
-
-
-
-
 
