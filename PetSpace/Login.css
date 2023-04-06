@@ -7,7 +7,7 @@
 }
 
 body {
-  background-image: url("Imagens/dog_17");
+  background-image: url("Imagens/dog_3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed
@@ -140,3 +140,12 @@ a:hover{
   border-radius: 4px;
   display: none;
 }
+
+#msgSuccess{
+	text-align: center;
+	color: #00bb00;
+	background-color: #bbffbe;
+	padding: 10px;
+	border-radius: 4px;
+	display: none;
+  }
