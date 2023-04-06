@@ -22,16 +22,16 @@ body {
 }
 
 .card {
-  background-color: #ffffff80;
+    background-color: #ffffff80;
   padding: 30px;
-  border-radius: 4%;
-  box-shadow: 3px 3px 1px 0px #00000060
+  border-radius: 10%;
+  box-shadow: 3px 3px 1px 0px #000000
 }
 
 h1{
   text-align: center;
   margin-bottom: 20px;
-  color: #272262
+  color: #0d0d0d
 }
 
 .label-float input{
@@ -39,13 +39,13 @@ h1{
   padding: 5px 5px;
   display: inline-block;
   border: 0;
-  border-bottom: 2px solid #272262;
+  border-bottom: 2px solid #000000;
   background-color: transparent;
   outline: none;
   min-width: 180px;
   font-size: 16px;
   transition: all .3s ease-out;
-  border-radius: 0;
+  border-radius: 0px;
   
 }
 
@@ -57,11 +57,11 @@ h1{
 }
 
 .label-float input:focus{
-  border-bottom: 2px solid #4038a0;
+  border-bottom: 2px solid #f0f0f0;
 }
 
 .label-float label{
-  color: #272262;
+  color: #ffffff;
   pointer-event: none;
   position: absolute;
   top: 0;
@@ -74,13 +74,13 @@ h1{
 .label-float input:valid + label{
   font-size: 13px;
   margin-top: 0;
-  color: #4038a0
+  color: #000000
 }
 
 button{
   background-color: transparent;
-  border-color: #272262;
-  color: #272262;
+  border-color: #060606;
+  color: #000000;
   padding: 7px;
   font-weight: bold;
   font-size: 12pt;
@@ -92,7 +92,7 @@ button{
 }
 
 button:hover{
-  background-color: #272262;
+    background-color: #37ff00;
   color: #fff;
 }
 
@@ -114,14 +114,14 @@ p{
 }
 
 a{
-  color: #7a3077;
+  color: #5a64cd;
   font-weight: bold;
   text-decoration: none;
   transition: all .3s ease-out;
 }
 
 a:hover{
-  color: #272262;
+  color: #2313d9;
 }
 
 .fa-eye{
@@ -129,7 +129,7 @@ a:hover{
   top: 15px;
   right: 10px;
   cursor: pointer;
-  color: #272262;
+  color: #000000;
 }
 
  #msgError{
