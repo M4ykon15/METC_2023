@@ -1,14 +1,18 @@
-let btn = document.querySelector('#verSenha')
-let btnConfirm = document.querySelector('#verConfirmSenha')
+let btn = document.querySelector('#eyeSvg1')
+let btnConfirm = document.querySelector('#eyeSvg2')
 
 
 let nome = document.querySelector('#nome')
 let labelNome = document.querySelector('#labelNome')
 let validNome = false
 
-let usuario = document.querySelector('#usuario')
-let labelUsuario = document.querySelector('#labelUsuario')
-let validUsuario = false
+let email = document.querySelector('#email')
+let labelEmail = document.querySelector('#labelEmail')
+let validEmail = false
+
+let cpf = document.querySelector('#cpf')
+let labelCpf = document.querySelector('#labelCpf')
+let validCpf = false
 
 let senha = document.querySelector('#senha')
 let labelSenha = document.querySelector('#labelSenha')
@@ -21,10 +25,18 @@ let validConfirmSenha = false
 let msgError = document.querySelector('#msgError')
 let msgSuccess = document.querySelector('#msgSuccess')
 
+
+
 nome.addEventListener('keyup', () => {
-  if(nome.value.length <= 2){
+  const nomeSemEspacos = nome.value.trim()
+  if(nomeSemEspacos.length === 0 || nomeSemEspacos.search(/\d/) !== -1) {
     labelNome.setAttribute('style', 'color: red')
-    labelNome.innerHTML = 'Nome *Insira no minimo 3 caracteres'
+    labelNome.innerHTML = 'Nome (Insira um nome válido, sem números)'
+    nome.setAttribute('style', 'border-color: red')
+    validNome = false
+  } else if (nomeSemEspacos.length <= 4) {
+    labelNome.setAttribute('style', 'color: red')
+    labelNome.innerHTML = 'Nome (Insira no mínimo 5 caracteres)'
     nome.setAttribute('style', 'border-color: red')
     validNome = false
   } else {
@@ -35,19 +47,42 @@ nome.addEventListener('keyup', () => {
   }
 })
 
-usuario.addEventListener('keyup', () => {
-  if(usuario.value.length <= 4){
-    labelUsuario.setAttribute('style', 'color: red')
-    labelUsuario.innerHTML = 'Usuário *Insira no minimo 5 caracteres'
-    usuario.setAttribute('style', 'border-color: red')
-    validUsuario = false
+
+
+email.addEventListener('keyup', () => {
+  if(email.value.length<= 5 || !email.value.includes('@yahoo.com') && !email.value.includes('@gmail.com')){
+    labelEmail.setAttribute('style', 'color: red')
+    labelEmail.innerHTML = 'Preencha com @gmail.com ou @yahoo.com'
+    email.setAttribute('style', 'border-color: red')
+    validEmail = false
   } else {
-    labelUsuario.setAttribute('style', 'color: green')
-    labelUsuario.innerHTML = 'Usuário'
-    usuario.setAttribute('style', 'border-color: green')
-    validUsuario = true
+    labelEmail.setAttribute('style', 'color: green')
+    labelEmail.innerHTML = 'Usuário'
+    email.setAttribute('style', 'border-color: green')
+    validEmail = true
   }
 })
+
+
+
+cpf.addEventListener('keyup', () => {
+  const cpfSemMascara = cpf.value.replace(/\D/g, '') // remove a máscara do CPF
+  const cpfComMascara = cpfSemMascara.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4") // adiciona a máscara no CPF
+
+  if (cpfSemMascara.length !== 11) {
+    labelCpf.setAttribute('style', 'color: red')
+    labelCpf.innerHTML = 'CPF incorreto. Insira 11 números'
+    cpf.setAttribute('style', 'border-color: red')
+    validCpf = false
+  } else {
+    labelCpf.setAttribute('style', 'color: green')
+    labelCpf.innerHTML = 'CPF'
+    cpf.value = cpfComMascara // atribui o valor com máscara ao campo de CPF
+    cpf.setAttribute('style', 'border-color: green')
+    validCpf = true
+  }
+})
+
 
 senha.addEventListener('keyup', () => {
   if(senha.value.length <= 5){
@@ -64,9 +99,9 @@ senha.addEventListener('keyup', () => {
 })
 
 confirmSenha.addEventListener('keyup', () => {
-  if(senha.value != confirmSenha.value){
+  if(senha.value != confirmSenha.value && (" ")){
     labelConfirmSenha.setAttribute('style', 'color: red')
-    labelConfirmSenha.innerHTML = 'Confirmar Senha *As senhas não conferem'
+    labelConfirmSenha.innerHTML = 'As senhas não são iguais'
     confirmSenha.setAttribute('style', 'border-color: red')
     validConfirmSenha = false
   } else {
@@ -77,14 +112,34 @@ confirmSenha.addEventListener('keyup', () => {
   }
 })
 
+confirmSenha.addEventListener('keyup', () => {
+  if (confirmSenha.value.length === 0) { // verifica se a classe confirmSenha está vazia
+    labelConfirmSenha.setAttribute('style', 'color: red')
+    labelConfirmSenha.innerHTML = 'Confirme a senha'
+    confirmSenha.setAttribute('style', 'border-color: red')
+    validConfirmSenha = false
+  } else if (senha.value !== confirmSenha.value) {
+    labelConfirmSenha.setAttribute('style', 'color: red')
+    labelConfirmSenha.innerHTML = 'As senhas não são iguais'
+    confirmSenha.setAttribute('style', 'border-color: red')
+    validConfirmSenha = false
+  } else {
+    labelConfirmSenha.setAttribute('style', 'color: green')
+    labelConfirmSenha.innerHTML = 'Confirmar Senha'
+    confirmSenha.setAttribute('style', 'border-color: green')
+    validConfirmSenha = true
+  }
+})
+
+
 function cadastrar(){
-  if(validNome && validUsuario && validSenha && validConfirmSenha){
+  if(validNome && validEmail && validCpf && validSenha && validConfirmSenha){
     let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
     
     listaUser.push(
     {
       nomeCad: nome.value,
-      userCad: usuario.value,
+      emailCad: email.value,
       senhaCad: senha.value
     }
     )
@@ -98,7 +153,8 @@ function cadastrar(){
     msgError.innerHTML = ''
     
     setTimeout(()=>{
-        window.location.href = 'https://cdpn.io/thicode/debug/ZELzYxV/dXAqBaRyvwJk'
+        window.location.href = 'PetSpace.html'
+  
     }, 3000)
   
     
@@ -110,6 +166,7 @@ function cadastrar(){
   }
 }
 
+//icone do botão de ver senha!!
 btn.addEventListener('click', ()=>{
   let inputSenha = document.querySelector('#senha')
   
