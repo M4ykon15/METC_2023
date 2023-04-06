@@ -37,7 +37,7 @@ btn.addEventListener('click', ()=>{
       validEmail = false
     } else {
       labelEmail.setAttribute('style', 'color: green')
-      labelEmail.innerHTML = 'Usuário'
+      labelEmail.innerHTML = 'Email'
       email.setAttribute('style', 'border-color: green')
       validEmail = true
     }
