@@ -67,32 +67,37 @@ btn.addEventListener('click', ()=>{
   
   function entrar() {
     if (validEmail && validSenha) {
+      msgSuccess.setAttribute('style', 'display: block')
+      msgSuccess.innerHTML = 'Cadastrando usuário...'
+      msgError.setAttribute('style', 'display: none')
+      msgError.innerHTML = ''
+
+      
+
+      setTimeout(()=>{
+        window.location.href = 'PetSpace.html'
+  
+    }, 3000)
+       
+      } 
       if (email.value.trim() === '' || email.value.trim() !== 'admin@gmail.com') {
         msgError.setAttribute('style', 'display: block')
-        msgError.innerHTML = '<strong>Preencha todos os campos corretamente antes de cadastrar</strong>'
+        msgError.innerHTML = 'Preencha todos os campos corretamente'
         msgSuccess.innerHTML = ''
         msgSuccess.setAttribute('style', 'display: none')
-        return false
-      } else {
-        msgSuccess.setAttribute('style', 'display: block')
-        msgSuccess.innerHTML = '<strong>Cadastrando usuário...</strong>'
-        msgError.setAttribute('style', 'display: none')
-        msgError.innerHTML = ''
 
-        setTimeout(()=>{
-          window.location.href = 'PetSpace.html'
-    
-      }, 3000)
-
+        labelSenha.setAttribute('style', 'color: red')
+      labelSenha.innerHTML = 'Insira uma senha válida'
+      senha.setAttribute('style', 'border-color: red')
+     
+      labelEmail.setAttribute('style', 'color: red')
+      labelEmail.innerHTML = 'Insira um Email valido'
+      email.setAttribute('style', 'border-color: red')
+     
+        
       }
-    } else {
-      msgError.setAttribute('style', 'display: block')
-      msgError.innerHTML = '<strong>Preencha todos os campos corretamente antes de entrar</strong>'
-      msgSuccess.innerHTML = ''
-      msgSuccess.setAttribute('style', 'display: none')
-      return false
-    }
   }
+  
   
   
  
