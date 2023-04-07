@@ -1,9 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+
+
 
 * {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Code', monospace;
 }
 
 body {
@@ -22,16 +27,17 @@ body {
 }
 
 .card {
-    background-color: #ffffff80;
+    background-color: #ffffff7a;
   padding: 30px;
-  border-radius: 10%;
-  box-shadow: 3px 3px 1px 0px #000000
+  border-radius: 20px;
 }
 
 h1{
   text-align: center;
   margin-bottom: 20px;
-  color: #0d0d0d
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .label-float input{
@@ -39,7 +45,7 @@ h1{
   padding: 5px 5px;
   display: inline-block;
   border: 0;
-  border-bottom: 2px solid #000000;
+  border-bottom: 2px solid #ffffff;
   background-color: transparent;
   outline: none;
   min-width: 180px;
@@ -52,16 +58,16 @@ h1{
 .label-float{
   position: relative;
   padding-top: 13px;
-  margin-top: 5%;
+  margin-top: 10px;
   margin-bottom: 5%;
 }
 
 .label-float input:focus{
-  border-bottom: 2px solid #f0f0f0;
+  border-bottom: 2px solid #ffffff;
 }
 
 .label-float label{
-  color: #ffffff;
+  color: #000000;
   pointer-event: none;
   position: absolute;
   top: 0;
@@ -73,13 +79,13 @@ h1{
 .label-float input:focus + label,
 .label-float input:valid + label{
   font-size: 13px;
-  margin-top: 0;
-  color: #000000
+  margin-top: -6px;
+  color: #ffffff
 }
 
 button{
   background-color: transparent;
-  border-color: #060606;
+  border-color: #000000;
   color: #000000;
   padding: 7px;
   font-weight: bold;
@@ -89,10 +95,11 @@ button{
   cursor: pointer;
   outline: none;
   transition: all .4s ease-out;
+  width: 40%;
 }
 
 button:hover{
-    background-color: #37ff00;
+    background-color: #838f80;
   color: #fff;
 }
 
@@ -108,7 +115,7 @@ hr{
 }
 
 p{
-  color: #272262;
+  color: #000000;
   font-size: 14pt;
   text-align: center;
 }
@@ -126,7 +133,7 @@ a:hover{
 
 .fa-eye{
   position: absolute;
-  top: 15px;
+  top: 20px;
   right: 10px;
   cursor: pointer;
   color: #000000;
@@ -148,4 +155,17 @@ a:hover{
 	padding: 10px;
 	border-radius: 4px;
 	display: none;
-  }
+  } 
+
+
+
+
+
+
+
+
+
+
+  
+
+
