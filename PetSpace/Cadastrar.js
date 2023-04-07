@@ -31,12 +31,12 @@ nome.addEventListener('keyup', () => {
   const nomeSemEspacos = nome.value.trim()
   if(nomeSemEspacos.length === 0 || nomeSemEspacos.search(/\d/) !== -1) {
     labelNome.setAttribute('style', 'color: red')
-    labelNome.innerHTML = 'Nome (Insira um nome válido, sem números)'
+    labelNome.innerHTML = 'Insira um nome válido'
     nome.setAttribute('style', 'border-color: red')
     validNome = false
-  } else if (nomeSemEspacos.length <= 4) {
+  } else if (nomeSemEspacos.length <= 6) {
     labelNome.setAttribute('style', 'color: red')
-    labelNome.innerHTML = 'Nome (Insira no mínimo 5 caracteres)'
+    labelNome.innerHTML = 'Insira no mínimo 7 caracteres'
     nome.setAttribute('style', 'border-color: red')
     validNome = false
   } else {
@@ -52,12 +52,12 @@ nome.addEventListener('keyup', () => {
 email.addEventListener('keyup', () => {
   if(email.value.length<= 5 || !email.value.includes('@yahoo.com') && !email.value.includes('@gmail.com')){
     labelEmail.setAttribute('style', 'color: red')
-    labelEmail.innerHTML = 'Preencha com @gmail.com ou @yahoo.com'
+    labelEmail.innerHTML = 'Preencha com email válido'
     email.setAttribute('style', 'border-color: red')
     validEmail = false
   } else {
     labelEmail.setAttribute('style', 'color: green')
-    labelEmail.innerHTML = 'Usuário'
+    labelEmail.innerHTML = 'Email'
     email.setAttribute('style', 'border-color: green')
     validEmail = true
   }
@@ -71,7 +71,7 @@ cpf.addEventListener('keyup', () => {
 
   if (cpfSemMascara.length !== 11) {
     labelCpf.setAttribute('style', 'color: red')
-    labelCpf.innerHTML = 'CPF incorreto. Insira 11 números'
+    labelCpf.innerHTML = 'CPF incorreto'
     cpf.setAttribute('style', 'border-color: red')
     validCpf = false
   } else {
@@ -87,7 +87,7 @@ cpf.addEventListener('keyup', () => {
 senha.addEventListener('keyup', () => {
   if(senha.value.length <= 5){
     labelSenha.setAttribute('style', 'color: red')
-    labelSenha.innerHTML = 'Senha *Insira no minimo 6 caracteres'
+    labelSenha.innerHTML = 'Insira no minimo 6 caracteres para a senha'
     senha.setAttribute('style', 'border-color: red')
     validSenha = false
   } else {
@@ -134,35 +134,46 @@ confirmSenha.addEventListener('keyup', () => {
 
 function cadastrar(){
   if(validNome && validEmail && validCpf && validSenha && validConfirmSenha){
-    let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
-    
-    listaUser.push(
-    {
-      nomeCad: nome.value,
-      emailCad: email.value,
-      senhaCad: senha.value
-    }
-    )
-    
-    localStorage.setItem('listaUser', JSON.stringify(listaUser))
-    
-   
+
+
     msgSuccess.setAttribute('style', 'display: block')
-    msgSuccess.innerHTML = '<strong>Cadastrando usuário...</strong>'
+    msgSuccess.innerHTML = 'Cadastrando usuário...'
     msgError.setAttribute('style', 'display: none')
     msgError.innerHTML = ''
     
     setTimeout(()=>{
-        window.location.href = 'PetSpace.html'
+        window.location.href = '/HTML/PetSpace.html'
   
     }, 3000)
   
-    
-  } else {
+  }
+  else {
     msgError.setAttribute('style', 'display: block')
-    msgError.innerHTML = '<strong>Preencha todos os campos corretamente antes de cadastrar</strong>'
+    msgError.innerHTML = 'SEUS DADOS ESTÃO INCORRETOS'
     msgSuccess.innerHTML = ''
     msgSuccess.setAttribute('style', 'display: none')
+
+    labelNome.setAttribute('style', 'color: red')
+    labelNome.innerHTML = 'Insira um nome válido'
+    nome.setAttribute('style', 'border-color: red')
+
+    labelEmail.setAttribute('style', 'color: red')
+    labelEmail.innerHTML = 'Preencha com email válido'
+    email.setAttribute('style', 'border-color: red')
+
+    labelCpf.setAttribute('style', 'color: red')
+    labelCpf.innerHTML = 'Insira um CPF'
+    cpf.setAttribute('style', 'border-color: red')
+
+    labelSenha.setAttribute('style', 'color: red')
+    labelSenha.innerHTML = 'Insira uma senha'
+    senha.setAttribute('style', 'border-color: red')
+
+  
+    labelConfirmSenha.setAttribute('style', 'color: red')
+    labelConfirmSenha.innerHTML = 'Insira uma senha'
+    confirmSenha.setAttribute('style', 'border-color: red')
+
   }
 }
 
