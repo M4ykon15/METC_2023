@@ -48,7 +48,7 @@
         <button type="button" class="btn btn-outline-light btn-lg" data-toggle="modal" style="margin-right: 10px;"
           data-target="#Login">Cadastrar</button>
       </a>
-      
+
 
 
 
@@ -58,13 +58,14 @@
       <div id="mainListDiv" class="main_list">
         <ul class="navlinks">
           <li><a href="#Adotar">Adotar</a></li>
-          
+
           <li><a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSc353_10HddS_J4RQXACfqOb33Tm5WIQwrcrowcl6hE4vpDrQ/viewform?usp=sf_link">Doar</a>
+              href="https://docs.google.com/forms/d/e/1FAIpQLSc353_10HddS_J4RQXACfqOb33Tm5WIQwrcrowcl6hE4vpDrQ/viewform?usp=sf_link"
+              target="_blank">Doar</a>
           </li>
           <li><a href="#Sobre">Sobre nós</a></li>
           <li><a href="#Parcerias">Parcerias</a></li>
-       
+
         </ul>
       </div>
       <span class="navTrigger">
@@ -120,7 +121,73 @@
   </script>
 
   </nav>
-  
+
+  <form id="formato" action="processar_formulario.php" method="POST">
+
+    <label for="nome_pet" style="font-size: 20px;">Nome do Pet:</label>
+    <input type="text" id="nome_pet" name="nome_pet" required><br>
+
+    <label for="sexo" style="font-size: 20px;">Sexo:</label>
+    <select id="sexo" name="sexo" required>
+      <option value="macho">Macho</option>
+      <option value="femea">Fêmea</option>
+    </select><br>
+
+    <label for="especie" style="font-size: 20px;">Espécie:</label>
+    <input type="text" id="especie" placeholder="Cachorro - Gato" name="especie" required><br>
+
+    <label for="raca" style="font-size: 20px;">Raça:</label>
+    <input type="text" id="raca" placeholder="Caso nao souber, basta colocar 'desconhecido' " name="raca" required><br>
+
+    <label for="idade" style="font-size: 20px;">Idade:</label>
+    <input type="number" id="idade" name="idade" min="0" required><br>
+
+    <label for="porte" style="font-size: 20px;">Porte:</label>
+    <select id="porte" name="porte" required>
+      <option value="pequeno">Pequeno</option>
+      <option value="medio">Médio</option>
+      <option value="grande">Grande</option>
+    </select><br>
+
+    <label for="caracteristicas" style="font-size: 20px;">Características:</label><br>
+
+    <input type="checkbox" id="docil" name="caracteristicas[]" value="Docil">
+    <label for="docil">Dócil</label><br>
+
+    <input type="checkbox" id="brincalhao" name="caracteristicas[]" value="Brincalhao">
+    <label for="brincalhao">Brincalhão</label><br>
+
+    <input type="checkbox" id="sociavel" name="caracteristicas[]" value="Sociavel">
+    <label for="sociavel">Sociável</label><br>
+
+    <input type="checkbox" id="carente" name="caracteristicas[]" value="Carente">
+    <label for="carente">Carente</label><br>
+
+    <input type="checkbox" id="calmo" name="caracteristicas[]" value="Calmo">
+    <label for="calmo">Calmo</label><br>
+
+    <input type="checkbox" id="vive_apartamento" name="caracteristicas[]" value="Vive_apartamento">
+    <label for="vive_apartamento">Vive bem em apartamento</label><br>
+
+    <input type="checkbox" id="vive_casa_quintal" name="caracteristicas[]" value="Vive_casa_quintal">
+    <label for="vive_casa_quintal">Vive bem em casa com quintal</label><br>
+
+    <input type="checkbox" id="castrado" name="caracteristicas[]" value="Castrado">
+    <label for="castrado">Castrado</label><br>
+
+    <input type="checkbox" id="vermifugado" name="caracteristicas[]" value="Vermifugado">
+    <label for="vermifugado">Vermifugado</label><br>
+
+    <input type="checkbox" id="gosta_criancas" name="caracteristicas[]" value="Gosta_criancas">
+    <label for="gosta_criancas">Gosta de crianças</label><br>
+
+    <label for="endereco" style="font-size: 20px;">Endereço:</label><br>
+    <textarea id="endereco" name="endereco" rows="4" cols="50" placeholder="Rua - Numero - Bairro - Cidade - Estado" required></textarea><br>
+
+
+    <button type="submit" class="btn btn-success btn-lg">Enviar</button>
+  </form>
+
 
   <div class="lg:py-10 py-5" style="background-color:snow; text-align: center; ">
     <h1 class="title-lg" style="font-size: 50px;">Novos peludos por aqui</h1>
@@ -136,535 +203,415 @@
 
 
 
+  <div class="PETS">
 
-
-
-
-
-<div class="PETS">
-  <div class="card"
-    style="width: 28rem; border-radius: 30px;display: inline-block; margin-right:4%;margin-left:7%;margin-top: 2%;margin-bottom: 2%;">
-    <img class="card-img-top" src="/Imagens/dog_9.webp" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
-      width="300">
-    <div class="card-body">
-      <h2 class="card-title">Thor <span class="material-symbols-outlined"
-          style="float:right;font-size: 40px; color:darkblue;">
-          male
-        </span></h2>
-      <p class="card-text" style="font-size: 15px;">São Paulo-SP</p>
-      <center>
-        <button type="button" class="btn btn-primary btn-lg" style="text-align: center" data-toggle="modal"
-          data-target="#Adotar1">Adotar</button>
-      </center>
-      <!-- Modal -->
-      <div class="modal fade" id="Adotar1" tabindex="-1" role="dialog" aria-labelledby="Adotar2" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title" id="TituloModalCentralizado">Thor</h1>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div>
+    <div class="card"
+      style="width: 28rem; border-radius: 30px;display: inline-block; margin-right:4%;margin-left:7%;margin-top: 2%;margin-bottom: 2%;">
+      <img class="card-img-top" src="/Imagens/dog_9.webp" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
+        width="300">
+      <div class="card-body">
+        <h2 class="card-title">Thor <span class="material-symbols-outlined"
+            style="float:right;font-size: 40px; color:darkblue;">
+            male
+          </span></h2>
+        <p class="card-text" style="font-size: 15px;">São Paulo-SP</p>
+        <center>
+          <button type="button" class="btn btn-primary btn-lg" style="text-align: center" data-toggle="modal"
+            data-target="#Adotar1">Adotar</button>
+        </center>
+        <!-- Modal -->
+        <div class="modal fade" id="Adotar1" tabindex="-1" role="dialog" aria-labelledby="Adotar2" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title" id="TituloModalCentralizado">Thor</h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
               <div>
                 <div>
-                  <div class="card mb-3" style="max-width: 1000px; padding: 2%">
-                    <div class="dados" style="text-align: center;margin-bottom: 10px;">
-                      <h2>Cachorro / Macho / Filhote / Porte Pequeno</h2>
-                    </div>
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="/Imagens/dog_9.webp" class="img-fluid rounded-start"
-                          style="border-radius: 20px;width: 50rem">
-                        <div>
-                          <h3 class="card-title" style="text-align: center; margin-top: 10px;color: #00ff00">
-                            Características:</h3>
-                          <h4 class="card-text" style="margin: 10px;">
-                            Docíl
-                            <br>
-                            Brincalhão
-                            <br>
-                            Sociavel
-                            <br>
-                            Castrado
-                            <br>
-                            Vermifugado
-                            <br>
-                            Gosta de crianças
-                            <br>
-                          </h4>
-                        </div>
+                  <div>
+                    <div class="card mb-3" style="max-width: 1000px; padding: 2%">
+                      <div class="dados" style="text-align: center;margin-bottom: 10px;">
+                        <h2>Cachorro / Macho / Filhote / Porte Pequeno</h2>
                       </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <p class="card-text">
-                          <h3 class="card-title" style="color: #00ff00">Organização:</h3>
-                          <h4 class="card-text">ONG Auqmia</h4>
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="/Imagens/dog_9.webp" class="img-fluid rounded-start"
+                            style="border-radius: 20px;width: 50rem">
+                          <div>
+                            <h3 class="card-title" style="text-align: center; margin-top: 10px;color: #00ff00">
+                              Características:</h3>
+                            <h4 class="card-text" style="margin: 10px;">
+                              Docíl
+                              <br>
+                              Brincalhão
+                              <br>
+                              Sociavel
+                              <br>
+                              Castrado
+                              <br>
+                              Vermifugado
+                              <br>
+                              Gosta de crianças
+                              <br>
+                            </h4>
+                          </div>
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <p class="card-text">
+                            <h3 class="card-title" style="color: #00ff00">Organização:</h3>
+                            <h4 class="card-text">ONG Auqmia</h4>
 
-                          <h3 class="card-title" style="color: #00ff00">Historia: </h3>
-                          <h4 class="card-text">Thor é um cachorro muito forte, sofreu um acidente e quase perdeu a
-                            vida, mas logo se recuperou e esta pronto para receber muito carinho.</h4>
+                            <h3 class="card-title" style="color: #00ff00">Historia: </h3>
+                            <h4 class="card-text">Thor é um cachorro muito forte, sofreu um acidente e quase perdeu a
+                              vida, mas logo se recuperou e esta pronto para receber muito carinho.</h4>
 
-                          <h3 class="card-title" style="color: #00ff00;">Raça:</h3>
-                          <h4 class="card-text"> </h4>
+                            <h3 class="card-title" style="color: #00ff00;">Raça:</h3>
+                            <h4 class="card-text"> </h4>
 
-                          <h3 class="card-title" style="color: #00ff00">Idade aproximada:</h3>
-                          <h4 class="card-text"> 6 meses</h4>
+                            <h3 class="card-title" style="color: #00ff00">Idade aproximada:</h3>
+                            <h4 class="card-text"> 6 meses</h4>
 
 
 
-                          <h3 class="card-title" style="color: #00ff00">Endereço: </h3>
-                          <h4 class="card-text">Estado: SP
-                            Cidade: São Paulo
-                            Logradouro: Rua Bernardino Bertollotti
-                            Bairro: Jardim Nossa Senhora Aparecida
-                            Cep: 52651-10</h4>
-                          </p>
+                            <h3 class="card-title" style="color: #00ff00">Endereço: </h3>
+                            <h4 class="card-text">Estado: SP
+                              Cidade: São Paulo
+                              Logradouro: Rua Bernardino Bertollotti
+                              Bairro: Jardim Nossa Senhora Aparecida
+                              Cep: 52651-10</h4>
+                            </p>
 
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
 
-              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#Login">Adotar</button>
-        
-              <!-- Modal -->
-              <div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title" id="TituloModalCentralizado">Atenção</h1>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body" style="text-align: center;">
-                      <h1>Antes de adotar, lembre-se:</h1><br>
-                      <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
-                    </div>
-                    <div class="modal-footer">
-                      <div class="dropup-center dropup">
-                        <button class="btn btn-primary dropdown-toggle btn-lg" type="button" data-bs-toggle="dropdown"
-                          aria-expanded="false">
-                          OK
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                  data-target="#Login">Adotar</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="Login"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title" id="TituloModalCentralizado">Atenção</h1>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                          <span aria-hidden="true">&times;</span>
                         </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a></li>
-                          <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a></li>
-                        </ul>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card" 
-  style="width: 28rem; border-radius: 30px;display: inline-block;margin-right:4%;margin-top: 2%;margin-bottom: 2%;">
-    <img class="card-img-top" src="/Imagens/dog_5.webp" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
-      width="300">
-    <div class="card-body">
-      <h2 class="card-title">Felix <span class="material-symbols-outlined"
-          style="float:right;font-size: 40px; color:darkblue;">
-          male
-        </span></h2>
-      <p class="card-text" style="font-size: 15px;">São Paulo-SP</p>
-      <center>
-        <button type="button" class="btn btn-primary btn-lg" style="text-align: center" data-toggle="modal"
-          data-target="#Adotar2">Adotar</button>
-      </center>
-      <!-- Modal -->
-      <div class="modal fade" id="Adotar2" tabindex="-1" role="dialog" aria-labelledby="Adotar2" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title" id="TituloModalCentralizado">Felix</h1>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div>
-              <div>
-                <div>
-                  <div class="card mb-3" style="max-width: 1000px; padding: 2%;">
-                    <div class="dados" style="text-align: center;margin-bottom: 10px;">
-                      <h2>Cachorro / Macho / Adulto / Porte médio</h2>
-                    </div>
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="/Imagens/dog_5.webp" class="img-fluid rounded-start"
-                          style="border-radius: 20px;width: 50rem">
-                        <div>
-                          <h3 class="card-title" style="text-align: center; margin-top: 10px;color: #00ff00">
-                            Características:</h3>
-                          <h4 class="card-text" style="margin: 10px;">
-                            Docíl
-                            <br>
-                            Brincalhão
-                            <br>
-                            Sociavel
-                            <br>
-                            Carente
-                            <br>
-                            Calmo
-                            <br>
-                            Vive bem em apartamento
-                            <br>
-                            Vive bem e casa com quintal
-                            <br>
-                            Castrado
-                            <br>
-                            Vermifugado
-                            <br>
-                            Gosta de crianças
-                            <br>
-                          </h4>
-                        </div>
+                      <div class="modal-body" style="text-align: center;">
+                        <h1>Antes de adotar, lembre-se:</h1><br>
+                        <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será
+                          responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
                       </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <p class="card-text">
-                          <h3 class="card-title" style="color: #00ff00">Organização:</h3>
-                          <h4 class="card-text">Focinho Amigo</h4>
-
-                          <h3 class="card-title" style="color: #00ff00">Historia: </h3>
-                          <h4 class="card-text">Infelizmente vivia amarrado na corrente em um sítio desde filhotinho,
-                            às vezes não comia, nem bebia, sentia frio e as condições onde se encontrava eram bem
-                            difíceis
-                            e desesperadoras. Mesmo por tanto tempo nessa condição o brilho e a esperança no olhar
-                            nunca
-                            se apagaram nem a luta e a alegria de viver e agora tive a sorte de uma tia me resgatar
-                            que
-                            está procurando uma família para ter a oportunidade de amar, ser amado e ter um lar para
-                            chamar de seu.</h4>
-
-                          <h3 class="card-title" style="color: #00ff00;">Raça:</h3>
-                          <h4 class="card-text"> Caramelo</h4>
-
-                          <h3 class="card-title" style="color: #00ff00">Idade aproximada:</h3>
-                          <h4 class="card-text"> 3 anos</h4>
-
-
-
-                          <h3 class="card-title" style="color: #00ff00">Endereço: </h3>
-                          <h4 class="card-text">Estado: SP
-                            Cidade: São Paulo
-                            Logradouro: Rua Bernardino Bertollotti
-                            Bairro: Jardim Nossa Senhora Aparecida
-                            Cep: 52651-10</h4>
-                          </p>
-
+                      <div class="modal-footer">
+                        <div class="dropup-center dropup">
+                          <button class="btn btn-primary dropdown-toggle btn-lg" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            OK
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a>
+                            </li>
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a>
+                            </li>
+                          </ul>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
-
-              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#Login1">Adotar</button>
-        
-              <!-- Modal -->
-              <div class="modal fade" id="Login1" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" >
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content" >
-                    <div class="modal-header">
-                      <h1 class="modal-title" id="TituloModalCentralizado">Atenção</h1>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body" style="text-align: center;">
-                      <h1>Antes de adotar, lembre-se:</h1><br>
-                      <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
-                    </div>
-                    <div class="modal-footer">
-                      <div class="dropup-center dropup">
-                        <button class="btn btn-primary dropdown-toggle btn-lg" type="button" data-bs-toggle="dropdown"
-                          aria-expanded="false">
-                          OK
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a></li>
-                          <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card" 
-  style="width: 28rem; border-radius: 30px;display: inline-block;margin-right:4%;margin-top: 2%;margin-bottom: 2%;">
-    <img class="card-img-top" src="/Imagens/dog_6.webp" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
-      width="300">
-    <div class="card-body">
-      <h2 class="card-title">Bolinha <span class="material-symbols-outlined"
-          style="float:right;font-size: 40px; color:darkblue;">
-          male
-        </span></h2>
-      <p class="card-text" style="font-size: 15px;">São Paulo-SP</p>
-      <center>
-        <button type="button" class="btn btn-primary btn-lg" style="text-align: center" data-toggle="modal"
-          data-target="#Adotar3">Adotar</button>
-      </center>
-      <div class="modal fade" id="Adotar3" tabindex="-1" role="dialog" aria-labelledby="Adotar2" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title" id="TituloModalCentralizado">Bolinha</h1>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div>
-              <div>
-                <div>
-                  <div class="card mb-3" style="max-width: 1000px; padding: 2%">
-                    <div class="dados" style="text-align: center;margin-bottom: 10px;">
-                      <h2>Cachorro / Macho / Adulto / Porte médio</h2>
-                    </div>
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="/Imagens/dog_6.webp" class="img-fluid rounded-start"
-                          style="border-radius: 20px;width: 50rem">
-                        <div>
-                          <h3 class="card-title" style="text-align: center; margin-top: 10px;color: #00ff00">
-                            Características:</h3>
-                          <h4 class="card-text" style="margin: 10px;">
-                            Brincalhão
-                            <br>
-                            Carente
-                            <br>
-                            Calmo
-                            <br>
-                            Vive bem e casa com quintal
-                            <br>
-                            Vermifugado
-                            <br>
-                            Gosta de crianças
-                            <br>
-                          </h4>
-                        </div>
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <p class="card-text">
-                          <h3 class="card-title" style="color: #00ff00">Organização:</h3>
-                          <h4 class="card-text">Ação Animal</h4>
-
-                          <h3 class="card-title" style="color: #00ff00">Historia: </h3>
-                          <h4 class="card-text">Nossa equipe o encontrou com a pata machucada e com muita fome, demos
-                            todo o apoio e hoje ele ja esta melhor e pronto para receber um novo lar</h4>
-
-                          <h3 class="card-title" style="color: #00ff00;">Raça:</h3>
-                          <h4 class="card-text"> </h4>
-
-                          <h3 class="card-title" style="color: #00ff00">Idade aproximada:</h3>
-                          <h4 class="card-text"> 2 anos</h4>
-
-
-
-                          <h3 class="card-title" style="color: #00ff00">Endereço: </h3>
-                          <h4 class="card-text">Estado: SP
-                            Cidade: São Paulo
-                            Logradouro: Rua Bernardino Bertollotti
-                            Bairro: Jardim Nossa Senhora Aparecida
-                            Cep: 52651-10</h4>
-                          </p>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
-
-              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#Login2">Adotar</button>
-        
-              <!-- Modal -->
-              <div class="modal fade" id="Login2" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" >
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content" >
-                    <div class="modal-header">
-                      <h1 class="modal-title" id="TituloModalCentralizado">Atenção</h1>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body" style="text-align: center;">
-                      <h1>Antes de adotar, lembre-se:</h1><br>
-                      <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
-                    </div>
-                    <div class="modal-footer">
-                      <div class="dropup-center dropup">
-                        <button class="btn btn-primary dropdown-toggle btn-lg" type="button" data-bs-toggle="dropdown"
-                          aria-expanded="false">
-                          OK
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a></li>
-                          <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="card"
-   style="width: 28rem; border-radius: 30px;display: inline-block;margin-right:5%;margin-top: 2%;margin-bottom: 2%;">
-    <img class="card-img-top" src="/Imagens/dog_7.png" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
-      width="300">
-    <div class="card-body">
-      <h2 class="card-title">Polly <span class="material-symbols-outlined"
-          style="float:right;font-size: 40px; color:deeppink">
-          female
-        </span></h2>
-      <p class="card-text" style="font-size: 15px;">São Paulo-SP</p>
-      <center>
-        <button type="button" class="btn btn-primary btn-lg" style="text-align: center" data-toggle="modal"
-          data-target="#Adotar4">Adotar</button>
-      </center>
-      <div class="modal fade" id="Adotar4" tabindex="-1" role="dialog" aria-labelledby="Adotar4" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title" id="TituloModalCentralizado">Polly</h1>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div>
+    <div class="card"
+      style="width: 28rem; border-radius: 30px;display: inline-block;margin-right:4%;margin-top: 2%;margin-bottom: 2%;">
+      <img class="card-img-top" src="/Imagens/dog_5.webp" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
+        width="300">
+      <div class="card-body">
+        <h2 class="card-title">Felix <span class="material-symbols-outlined"
+            style="float:right;font-size: 40px; color:darkblue;">
+            male
+          </span></h2>
+        <p class="card-text" style="font-size: 15px;">São Paulo-SP</p>
+        <center>
+          <button type="button" class="btn btn-primary btn-lg" style="text-align: center" data-toggle="modal"
+            data-target="#Adotar2">Adotar</button>
+        </center>
+        <!-- Modal -->
+        <div class="modal fade" id="Adotar2" tabindex="-1" role="dialog" aria-labelledby="Adotar2" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title" id="TituloModalCentralizado">Felix</h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
               <div>
                 <div>
-                  <div class="card mb-3" style="max-width: 1000px; padding: 2%;">
-                    <div class="dados" style="text-align: center;margin-bottom: 10px;">
-                      <h2>Cachorro / fêmea / Filhote/ Porte Pequeno</h2>
-                    </div>
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="/Imagens/dog_7.png" class="img-fluid rounded-start"
-                          style="border-radius: 20px;width: 50rem">
-                        <div>
-                          <h3 class="card-title" style="text-align: center; margin-top: 10px;color: #00ff00">
-                            Características:</h3>
-                          <h4 class="card-text" style="margin: 10px;">
-                            Docíl
-                            <br>
-                            Brincalhão
-                            <br>
-                            Sociavel
-                            <br>
-                            Carente
-                            <br>
-                            Vive bem em apartamento
-                            <br>
-                            Castrado
-                            <br>
-                            Vermifugado
-                            <br>
-                            Gosta de crianças
-                            <br>
-                          </h4>
-                        </div>
+                  <div>
+                    <div class="card mb-3" style="max-width: 1000px; padding: 2%;">
+                      <div class="dados" style="text-align: center;margin-bottom: 10px;">
+                        <h2>Cachorro / Macho / Adulto / Porte médio</h2>
                       </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <p class="card-text">
-                          <h3 class="card-title" style="color: #00ff00">Organização:</h3>
-                          <h4 class="card-text">Solar</h4>
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="/Imagens/dog_5.webp" class="img-fluid rounded-start"
+                            style="border-radius: 20px;width: 50rem">
+                          <div>
+                            <h3 class="card-title" style="text-align: center; margin-top: 10px;color: #00ff00">
+                              Características:</h3>
+                            <h4 class="card-text" style="margin: 10px;">
+                              Docíl
+                              <br>
+                              Brincalhão
+                              <br>
+                              Sociavel
+                              <br>
+                              Carente
+                              <br>
+                              Calmo
+                              <br>
+                              Vive bem em apartamento
+                              <br>
+                              Vive bem e casa com quintal
+                              <br>
+                              Castrado
+                              <br>
+                              Vermifugado
+                              <br>
+                              Gosta de crianças
+                              <br>
+                            </h4>
+                          </div>
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <p class="card-text">
+                            <h3 class="card-title" style="color: #00ff00">Organização:</h3>
+                            <h4 class="card-text">Focinho Amigo</h4>
 
-                          <h3 class="card-title" style="color: #00ff00">Historia: </h3>
-                          <h4 class="card-text">Infelizmente Polly foi a única sobrevivente entre suas irmas, porem o
-                            brilho no seu olho nunca apagou, ela esta a busca de um novo lar.</h4>
+                            <h3 class="card-title" style="color: #00ff00">Historia: </h3>
+                            <h4 class="card-text">Infelizmente vivia amarrado na corrente em um sítio desde filhotinho,
+                              às vezes não comia, nem bebia, sentia frio e as condições onde se encontrava eram bem
+                              difíceis
+                              e desesperadoras. Mesmo por tanto tempo nessa condição o brilho e a esperança no olhar
+                              nunca
+                              se apagaram nem a luta e a alegria de viver e agora tive a sorte de uma tia me resgatar
+                              que
+                              está procurando uma família para ter a oportunidade de amar, ser amado e ter um lar para
+                              chamar de seu.</h4>
 
-                          <h3 class="card-title" style="color: #00ff00;">Raça:</h3>
-                          <h4 class="card-text"> </h4>
+                            <h3 class="card-title" style="color: #00ff00;">Raça:</h3>
+                            <h4 class="card-text"> Caramelo</h4>
 
-                          <h3 class="card-title" style="color: #00ff00">Idade aproximada:</h3>
-                          <h4 class="card-text"> 5 meses</h4>
+                            <h3 class="card-title" style="color: #00ff00">Idade aproximada:</h3>
+                            <h4 class="card-text"> 3 anos</h4>
 
 
 
-                          <h3 class="card-title" style="color: #00ff00">Endereço: </h3>
-                          <h4 class="card-text">Estado: SP
-                            Cidade: São Paulo
-                            Logradouro: Rua Bernardino Bertollotti
-                            Bairro: Jardim Nossa Senhora Aparecida
-                            Cep: 52651-10</h4>
-                          </p>
+                            <h3 class="card-title" style="color: #00ff00">Endereço: </h3>
+                            <h4 class="card-text">Estado: SP
+                              Cidade: São Paulo
+                              Logradouro: Rua Bernardino Bertollotti
+                              Bairro: Jardim Nossa Senhora Aparecida
+                              Cep: 52651-10</h4>
+                            </p>
 
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
 
-              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#Login3">Adotar</button>
-        
-              <!-- Modal -->
-              <div class="modal fade" id="Login3" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" >
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content" >
-                    <div class="modal-header">
-                      <h1 class="modal-title" id="TituloModalCentralizado">Atenção</h1>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body" style="text-align: center;">
-                      <h1>Antes de adotar, lembre-se:</h1><br>
-                      <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
-                    </div>
-                    <div class="modal-footer">
-                      <div class="dropup-center dropup">
-                        <button class="btn btn-primary dropdown-toggle btn-lg" type="button" data-bs-toggle="dropdown"
-                          aria-expanded="false">
-                          OK
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                  data-target="#Login1">Adotar</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="Login1" tabindex="-1" role="dialog" aria-labelledby="Login"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title" id="TituloModalCentralizado">Atenção</h1>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                          <span aria-hidden="true">&times;</span>
                         </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a></li>
-                          <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a></li>
-                        </ul>
+                      </div>
+                      <div class="modal-body" style="text-align: center;">
+                        <h1>Antes de adotar, lembre-se:</h1><br>
+                        <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será
+                          responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
+                      </div>
+                      <div class="modal-footer">
+                        <div class="dropup-center dropup">
+                          <button class="btn btn-primary dropdown-toggle btn-lg" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            OK
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a>
+                            </li>
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card"
+      style="width: 28rem; border-radius: 30px;display: inline-block;margin-right:4%;margin-top: 2%;margin-bottom: 2%;">
+      <img class="card-img-top" src="/Imagens/dog_6.webp" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
+        width="300">
+      <div class="card-body">
+        <h2 class="card-title">Bolinha <span class="material-symbols-outlined"
+            style="float:right;font-size: 40px; color:darkblue;">
+            male
+          </span></h2>
+        <p class="card-text" style="font-size: 15px;">São Paulo-SP</p>
+        <center>
+          <button type="button" class="btn btn-primary btn-lg" style="text-align: center" data-toggle="modal"
+            data-target="#Adotar3">Adotar</button>
+        </center>
+        <div class="modal fade" id="Adotar3" tabindex="-1" role="dialog" aria-labelledby="Adotar2" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title" id="TituloModalCentralizado">Bolinha</h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div>
+                <div>
+                  <div>
+                    <div class="card mb-3" style="max-width: 1000px; padding: 2%">
+                      <div class="dados" style="text-align: center;margin-bottom: 10px;">
+                        <h2>Cachorro / Macho / Adulto / Porte médio</h2>
+                      </div>
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="/Imagens/dog_6.webp" class="img-fluid rounded-start"
+                            style="border-radius: 20px;width: 50rem">
+                          <div>
+                            <h3 class="card-title" style="text-align: center; margin-top: 10px;color: #00ff00">
+                              Características:</h3>
+                            <h4 class="card-text" style="margin: 10px;">
+                              Brincalhão
+                              <br>
+                              Carente
+                              <br>
+                              Calmo
+                              <br>
+                              Vive bem e casa com quintal
+                              <br>
+                              Vermifugado
+                              <br>
+                              Gosta de crianças
+                              <br>
+                            </h4>
+                          </div>
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <p class="card-text">
+                            <h3 class="card-title" style="color: #00ff00">Organização:</h3>
+                            <h4 class="card-text">Ação Animal</h4>
+
+                            <h3 class="card-title" style="color: #00ff00">Historia: </h3>
+                            <h4 class="card-text">Nossa equipe o encontrou com a pata machucada e com muita fome, demos
+                              todo o apoio e hoje ele ja esta melhor e pronto para receber um novo lar</h4>
+
+                            <h3 class="card-title" style="color: #00ff00;">Raça:</h3>
+                            <h4 class="card-text"> </h4>
+
+                            <h3 class="card-title" style="color: #00ff00">Idade aproximada:</h3>
+                            <h4 class="card-text"> 2 anos</h4>
+
+
+
+                            <h3 class="card-title" style="color: #00ff00">Endereço: </h3>
+                            <h4 class="card-text">Estado: SP
+                              Cidade: São Paulo
+                              Logradouro: Rua Bernardino Bertollotti
+                              Bairro: Jardim Nossa Senhora Aparecida
+                              Cep: 52651-10</h4>
+                            </p>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
+
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                  data-target="#Login2">Adotar</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="Login2" tabindex="-1" role="dialog" aria-labelledby="Login"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title" id="TituloModalCentralizado">Atenção</h1>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body" style="text-align: center;">
+                        <h1>Antes de adotar, lembre-se:</h1><br>
+                        <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será
+                          responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
+                      </div>
+                      <div class="modal-footer">
+                        <div class="dropup-center dropup">
+                          <button class="btn btn-primary dropdown-toggle btn-lg" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            OK
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a>
+                            </li>
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -675,9 +622,145 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="card"
+    <div class="card"
+      style="width: 28rem; border-radius: 30px;display: inline-block;margin-right:5%;margin-top: 2%;margin-bottom: 2%;">
+      <img class="card-img-top" src="/Imagens/dog_7.png" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
+        width="300">
+      <div class="card-body">
+        <h2 class="card-title">Polly <span class="material-symbols-outlined"
+            style="float:right;font-size: 40px; color:deeppink">
+            female
+          </span></h2>
+        <p class="card-text" style="font-size: 15px;">São Paulo-SP</p>
+        <center>
+          <button type="button" class="btn btn-primary btn-lg" style="text-align: center" data-toggle="modal"
+            data-target="#Adotar4">Adotar</button>
+        </center>
+        <div class="modal fade" id="Adotar4" tabindex="-1" role="dialog" aria-labelledby="Adotar4" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title" id="TituloModalCentralizado">Polly</h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div>
+                <div>
+                  <div>
+                    <div class="card mb-3" style="max-width: 1000px; padding: 2%;">
+                      <div class="dados" style="text-align: center;margin-bottom: 10px;">
+                        <h2>Cachorro / fêmea / Filhote/ Porte Pequeno</h2>
+                      </div>
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="/Imagens/dog_7.png" class="img-fluid rounded-start"
+                            style="border-radius: 20px;width: 50rem">
+                          <div>
+                            <h3 class="card-title" style="text-align: center; margin-top: 10px;color: #00ff00">
+                              Características:</h3>
+                            <h4 class="card-text" style="margin: 10px;">
+                              Docíl
+                              <br>
+                              Brincalhão
+                              <br>
+                              Sociavel
+                              <br>
+                              Carente
+                              <br>
+                              Vive bem em apartamento
+                              <br>
+                              Castrado
+                              <br>
+                              Vermifugado
+                              <br>
+                              Gosta de crianças
+                              <br>
+                            </h4>
+                          </div>
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <p class="card-text">
+                            <h3 class="card-title" style="color: #00ff00">Organização:</h3>
+                            <h4 class="card-text">Solar</h4>
+
+                            <h3 class="card-title" style="color: #00ff00">Historia: </h3>
+                            <h4 class="card-text">Infelizmente Polly foi a única sobrevivente entre suas irmas, porem o
+                              brilho no seu olho nunca apagou, ela esta a busca de um novo lar.</h4>
+
+                            <h3 class="card-title" style="color: #00ff00;">Raça:</h3>
+                            <h4 class="card-text"> </h4>
+
+                            <h3 class="card-title" style="color: #00ff00">Idade aproximada:</h3>
+                            <h4 class="card-text"> 5 meses</h4>
+
+
+
+                            <h3 class="card-title" style="color: #00ff00">Endereço: </h3>
+                            <h4 class="card-text">Estado: SP
+                              Cidade: São Paulo
+                              Logradouro: Rua Bernardino Bertollotti
+                              Bairro: Jardim Nossa Senhora Aparecida
+                              Cep: 52651-10</h4>
+                            </p>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
+
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                  data-target="#Login3">Adotar</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="Login3" tabindex="-1" role="dialog" aria-labelledby="Login"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title" id="TituloModalCentralizado">Atenção</h1>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body" style="text-align: center;">
+                        <h1>Antes de adotar, lembre-se:</h1><br>
+                        <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será
+                          responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
+                      </div>
+                      <div class="modal-footer">
+                        <div class="dropup-center dropup">
+                          <button class="btn btn-primary dropdown-toggle btn-lg" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            OK
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a>
+                            </li>
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card"
       style="width: 28rem; border-radius: 30px;display: inline-block;margin-right:4%;margin-left:7%;margin-bottom: 0%;">
       <img class="card-img-top" src="/Imagens/dog_10.jpg" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
         width="300">
@@ -765,12 +848,14 @@
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
 
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#Login4">Adotar</button>
-        
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                  data-target="#Login4">Adotar</button>
+
                 <!-- Modal -->
-                <div class="modal fade" id="Login4" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" >
+                <div class="modal fade" id="Login4" tabindex="-1" role="dialog" aria-labelledby="Login"
+                  aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content" >
+                    <div class="modal-content">
                       <div class="modal-header">
                         <h1 class="modal-title" id="TituloModalCentralizado">Atenção</h1>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
@@ -779,7 +864,8 @@
                       </div>
                       <div class="modal-body" style="text-align: center;">
                         <h1>Antes de adotar, lembre-se:</h1><br>
-                        <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
+                        <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será
+                          responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
                       </div>
                       <div class="modal-footer">
                         <div class="dropup-center dropup">
@@ -788,8 +874,10 @@
                             OK
                           </button>
                           <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a></li>
-                            <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a></li>
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a>
+                            </li>
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -801,10 +889,10 @@
           </div>
         </div>
       </div>
-  </div>
+    </div>
 
-  <div class="card"
-     style="width: 28rem; border-radius: 30px;display: inline-block;margin-right:4%;margin-bottom: 0%;">
+    <div class="card"
+      style="width: 28rem; border-radius: 30px;display: inline-block;margin-right:4%;margin-bottom: 0%;">
       <img class="card-img-top" src="/Imagens/dog_11.jpeg" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
         width="300">
       <div class="card-body">
@@ -901,46 +989,51 @@
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
 
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#Login5">Adotar</button>
-        
-              <!-- Modal -->
-              <div class="modal fade" id="Login5" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" >
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content" >
-                    <div class="modal-header">
-                      <h1 class="modal-title" id="TituloModalCentralizado">Atenção</h1>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body" style="text-align: center;">
-                      <h1>Antes de adotar, lembre-se:</h1><br>
-                      <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
-                    </div>
-                    <div class="modal-footer">
-                      <div class="dropup-center dropup">
-                        <button class="btn btn-primary dropdown-toggle btn-lg" type="button" data-bs-toggle="dropdown"
-                          aria-expanded="false">
-                          OK
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                  data-target="#Login5">Adotar</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="Login5" tabindex="-1" role="dialog" aria-labelledby="Login"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title" id="TituloModalCentralizado">Atenção</h1>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                          <span aria-hidden="true">&times;</span>
                         </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a></li>
-                          <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a></li>
-                        </ul>
+                      </div>
+                      <div class="modal-body" style="text-align: center;">
+                        <h1>Antes de adotar, lembre-se:</h1><br>
+                        <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será
+                          responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
+                      </div>
+                      <div class="modal-footer">
+                        <div class="dropup-center dropup">
+                          <button class="btn btn-primary dropdown-toggle btn-lg" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            OK
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a>
+                            </li>
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
-  </div>
+    </div>
 
-  <div class="card" 
-    style="width: 28rem; border-radius: 30px;display: inline-block; margin-right:4%;margin-bottom: 0%;">
+    <div class="card"
+      style="width: 28rem; border-radius: 30px;display: inline-block; margin-right:4%;margin-bottom: 0%;">
       <img class="card-img-top" src="/Imagens/dog_12.JPG" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
         width="300">
       <div class="card-body">
@@ -1029,46 +1122,51 @@
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
 
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#Login6">Adotar</button>
-        
-              <!-- Modal -->
-              <div class="modal fade" id="Login6" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" >
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content" >
-                    <div class="modal-header">
-                      <h1 class="modal-title" id="TituloModalCentralizado">Atenção</h1>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body" style="text-align: center;">
-                      <h1>Antes de adotar, lembre-se:</h1><br>
-                      <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
-                    </div>
-                    <div class="modal-footer">
-                      <div class="dropup-center dropup">
-                        <button class="btn btn-primary dropdown-toggle btn-lg" type="button" data-bs-toggle="dropdown"
-                          aria-expanded="false">
-                          OK
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                  data-target="#Login6">Adotar</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="Login6" tabindex="-1" role="dialog" aria-labelledby="Login"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title" id="TituloModalCentralizado">Atenção</h1>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                          <span aria-hidden="true">&times;</span>
                         </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a></li>
-                          <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a></li>
-                        </ul>
+                      </div>
+                      <div class="modal-body" style="text-align: center;">
+                        <h1>Antes de adotar, lembre-se:</h1><br>
+                        <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será
+                          responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
+                      </div>
+                      <div class="modal-footer">
+                        <div class="dropup-center dropup">
+                          <button class="btn btn-primary dropdown-toggle btn-lg" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            OK
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a>
+                            </li>
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
-  </div>
+    </div>
 
-  <div class="card"
-     style="width: 28rem; border-radius: 30px;display: inline-block;margin-right:5%;margin-top: 0%;margin-bottom: 0%;">
+    <div class="card"
+      style="width: 28rem; border-radius: 30px;display: inline-block;margin-right:5%;margin-top: 0%;margin-bottom: 0%;">
       <img class="card-img-top" src="/Imagens/dog_13.jpg" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
         width="300">
       <div class="card-body">
@@ -1159,12 +1257,14 @@
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
 
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#Login7">Adotar</button>
-        
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                  data-target="#Login7">Adotar</button>
+
                 <!-- Modal -->
-                <div class="modal fade" id="Login7" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" >
+                <div class="modal fade" id="Login7" tabindex="-1" role="dialog" aria-labelledby="Login"
+                  aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content" >
+                    <div class="modal-content">
                       <div class="modal-header">
                         <h1 class="modal-title" id="TituloModalCentralizado">Atenção</h1>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
@@ -1173,7 +1273,8 @@
                       </div>
                       <div class="modal-body" style="text-align: center;">
                         <h1>Antes de adotar, lembre-se:</h1><br>
-                        <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
+                        <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será
+                          responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
                       </div>
                       <div class="modal-footer">
                         <div class="dropup-center dropup">
@@ -1182,8 +1283,10 @@
                             OK
                           </button>
                           <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a></li>
-                            <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a></li>
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a>
+                            </li>
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -1195,9 +1298,9 @@
           </div>
         </div>
       </div>
-  </div>
-  
-  <div class="card"
+    </div>
+
+    <div class="card"
       style="width: 28rem; border-radius: 30px;display: inline-block;margin-right:4%;margin-left:7%;margin-bottom: 1%;">
       <img class="card-img-top" src="/Imagens/cat_1.webp" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
         width="300">
@@ -1290,12 +1393,14 @@
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
 
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#Login8">Adotar</button>
-        
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                  data-target="#Login8">Adotar</button>
+
                 <!-- Modal -->
-                <div class="modal fade" id="Login8" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" >
+                <div class="modal fade" id="Login8" tabindex="-1" role="dialog" aria-labelledby="Login"
+                  aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content" >
+                    <div class="modal-content">
                       <div class="modal-header">
                         <h1 class="modal-title" id="TituloModalCentralizado">Atenção</h1>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
@@ -1304,7 +1409,8 @@
                       </div>
                       <div class="modal-body" style="text-align: center;">
                         <h1>Antes de adotar, lembre-se:</h1><br>
-                        <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
+                        <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será
+                          responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
                       </div>
                       <div class="modal-footer">
                         <div class="dropup-center dropup">
@@ -1313,8 +1419,10 @@
                             OK
                           </button>
                           <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a></li>
-                            <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a></li>
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a>
+                            </li>
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -1326,10 +1434,10 @@
           </div>
         </div>
       </div>
-  </div>
+    </div>
 
-  <div class="card" 
-  style="width: 28rem; border-radius: 30px;display: inline-block;margin-right:4%;margin-top: 2%;margin-bottom: 0%;">
+    <div class="card"
+      style="width: 28rem; border-radius: 30px;display: inline-block;margin-right:4%;margin-top: 2%;margin-bottom: 0%;">
       <img class="card-img-top" src="/Imagens/dog_14.jpg" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
         width="300">
       <div class="card-body">
@@ -1420,12 +1528,14 @@
 
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#Login9">Adotar</button>
-        
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                  data-target="#Login9">Adotar</button>
+
                 <!-- Modal -->
-                <div class="modal fade" id="Login9" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" >
+                <div class="modal fade" id="Login9" tabindex="-1" role="dialog" aria-labelledby="Login"
+                  aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content" >
+                    <div class="modal-content">
                       <div class="modal-header">
                         <h1 class="modal-title" id="TituloModalCentralizado">Atenção</h1>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
@@ -1434,7 +1544,8 @@
                       </div>
                       <div class="modal-body" style="text-align: center;">
                         <h1>Antes de adotar, lembre-se:</h1><br>
-                        <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
+                        <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será
+                          responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
                       </div>
                       <div class="modal-footer">
                         <div class="dropup-center dropup">
@@ -1443,8 +1554,10 @@
                             OK
                           </button>
                           <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a></li>
-                            <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a></li>
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a>
+                            </li>
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -1456,10 +1569,10 @@
           </div>
         </div>
       </div>
-  </div>
+    </div>
 
-  <div class="card" 
-     style="width: 28rem; border-radius: 30px;display: inline-block;margin-right:4%;margin-top: 2%;margin-bottom: 0%;">
+    <div class="card"
+      style="width: 28rem; border-radius: 30px;display: inline-block;margin-right:4%;margin-top: 2%;margin-bottom: 0%;">
       <img class="card-img-top" src="/Imagens/dog_15.webp" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
         width="300">
       <div class="card-body">
@@ -1554,12 +1667,14 @@
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
 
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#Login10">Adotar</button>
-        
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                  data-target="#Login10">Adotar</button>
+
                 <!-- Modal -->
-                <div class="modal fade" id="Login10" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" >
+                <div class="modal fade" id="Login10" tabindex="-1" role="dialog" aria-labelledby="Login"
+                  aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content" >
+                    <div class="modal-content">
                       <div class="modal-header">
                         <h1 class="modal-title" id="TituloModalCentralizado">Atenção</h1>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
@@ -1568,7 +1683,8 @@
                       </div>
                       <div class="modal-body" style="text-align: center;">
                         <h1>Antes de adotar, lembre-se:</h1><br>
-                        <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
+                        <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será
+                          responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
                       </div>
                       <div class="modal-footer">
                         <div class="dropup-center dropup">
@@ -1577,8 +1693,10 @@
                             OK
                           </button>
                           <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a></li>
-                            <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a></li>
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a>
+                            </li>
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -1590,10 +1708,10 @@
           </div>
         </div>
       </div>
-  </div>
+    </div>
 
-  <div class="card"
-     style="width: 28rem; border-radius: 30px;display: inline-block; ;margin-right:5%;margin-top: 2%;margin-bottom: 0%;">
+    <div class="card"
+      style="width: 28rem; border-radius: 30px;display: inline-block; ;margin-right:5%;margin-top: 2%;margin-bottom: 0%;">
       <img class="card-img-top" src="/Imagens/dog_16.webp" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
         width="300">
       <div class="card-body">
@@ -1650,20 +1768,22 @@
                             <p class="card-text">
                             <h3 class="card-title" style="color: #00ff00">Organização:</h3>
                             <h4 class="card-text">Focinho Amigo</h4>
-      
+
                             <h3 class="card-title" style="color: #00ff00">Historia: </h3>
-                            <h4 class="card-text">Zeus é de porte Grande, bem amigável e extremamente dócil. é uma excelente
-                              companhia para quem busca um animal de estimação que adora carinho. Ele se adapta facilmente a
+                            <h4 class="card-text">Zeus é de porte Grande, bem amigável e extremamente dócil. é uma
+                              excelente
+                              companhia para quem busca um animal de estimação que adora carinho. Ele se adapta
+                              facilmente a
                               diferentes espaços, sejam eles grandes ou pequenos e é muito tranquilo.</h4>
-      
+
                             <h3 class="card-title" style="color: #00ff00;">Raça:</h3>
                             <h4 class="card-text"> Rotwailer</h4>
-      
+
                             <h3 class="card-title" style="color: #00ff00">Idade aproximada:</h3>
                             <h4 class="card-text"> 5 anos</h4>
-      
-      
-      
+
+
+
                             <h3 class="card-title" style="color: #00ff00">Endereço: </h3>
                             <h4 class="card-text">Estado: SP
                               Cidade: São Paulo
@@ -1671,7 +1791,7 @@
                               Bairro: Jardim Nossa Senhora Aparecida
                               Cep: 52651-10</h4>
                             </p>
-      
+
                           </div>
                         </div>
                       </div>
@@ -1679,16 +1799,18 @@
                   </div>
                 </div>
               </div>
-      
+
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
-      
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#Login11">Adotar</button>
-              
+
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                  data-target="#Login11">Adotar</button>
+
                 <!-- Modal -->
-                <div class="modal fade" id="Login11" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" >
+                <div class="modal fade" id="Login11" tabindex="-1" role="dialog" aria-labelledby="Login"
+                  aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content" >
+                    <div class="modal-content">
                       <div class="modal-header">
                         <h1 class="modal-title" id="TituloModalCentralizado">Atenção</h1>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
@@ -1697,7 +1819,8 @@
                       </div>
                       <div class="modal-body" style="text-align: center;">
                         <h1>Antes de adotar, lembre-se:</h1><br>
-                        <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
+                        <h3>Animais têm sentimentos e precisam de cuidados e atenção todos os dias. Ao adotar, você será
+                          responsável por garantir que ele seja cuidado e amado durante toda a vida dele!</h3>
                       </div>
                       <div class="modal-footer">
                         <div class="dropup-center dropup">
@@ -1706,8 +1829,10 @@
                             OK
                           </button>
                           <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a></li>
-                            <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a></li>
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">WhatsApp: 99 99999 9999 </a>
+                            </li>
+                            <li><a class="dropdown-item" style="font-size: 20px" href="#">Email: exemplo@gmail.com</a>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -1719,571 +1844,601 @@
           </div>
         </div>
       </div>
-  </div>
-
-
- 
-  <nav aria-label="Navegação de página exemplo">
-    <ul class="pagination justify-content-center pagination-lg" style="margin-top: 10px;margin-bottom: 30px;">
-      <li class="page-item disabled">
-        <a class="page-link" href="#" tabindex="-1">Anterior</a>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#">Próximo</a>
-      </li>
-    </ul>
-  </nav>
-
-  <div class="lg:py-10 py-5" style="background-color:rgb(237, 195, 6); text-align: center">
-    <h1 class="title-lg" style="font-size: 50px;">Alguns pets que ja foram adotados</h1>
-    <p class="mt-3 sm:mt-4">
-    </p>
-    <div class="text-xl text-gray-500" style="font-size: 30px;">Olha só estes rostinhos, eles estão muito felizes com o seu novo lar e sua nova família!</div>
-  </div>
-
-  <div class="card"
-    style="width: 28rem; border-radius: 30px;display: inline-block; margin-right:4%;margin-left:7%;margin-top: 2%;margin-bottom: 2%;">
-    <img class="card-img-top" src="/Imagens/dog_9.webp" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
-      width="300">
-      <span class=" bottom-4 inset-x-6 bg-warning text-center uppercase text-white font-bold py-2 bg-opacity-200 shadow text-sm sm:text-lg" style="font-size: 30px; text-align: center; align-items: center; justify-content: center ; display: flex;">Adotado</span>
-    <div class="card-body">
-      <h2 class="card-title">Thor <span class="material-symbols-outlined"
-
-          style="float:right;font-size: 40px; color:darkblue;">
-          male
-        </span></h2>
-      <p class="card-text" style="font-size: 15px;">São Paulo-SP</p>
-      <center>
-        <button type="button" class="btn btn-primary btn-lg" style="text-align: center" data-toggle="modal"
-          data-target="#Adotar40">Visualizar</button>
-      </center>
-      <!-- Modal -->
-      <div class="modal fade" id="Adotar40" tabindex="-1" role="dialog" aria-labelledby="Adotar2" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header" style="display: contents;">
-              <span class=" bottom-4 inset-x-6 bg-warning text-center uppercase text-white font-bold py-2 bg-opacity-200 shadow text-sm sm:text-lg" style="font-size: 30px; text-align: center; align-items: center; justify-content: center ; display: inline;">Adotado</span>
-
-            </div>
-            <div>
-              <div>
-                <div>
-                  <div class="card mb-3" style="max-width: 1000px; padding: 2%">
-                    <div class="dados" style="text-align: center;margin-bottom: 10px;">
-                      <h2>Cachorro / Macho / Filhote / Porte Pequeno</h2>
-                    </div>
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        
-                        <img src="/Imagens/dog_9.webp" class="img-fluid rounded-start"
-                          style="border-radius: 20px;width: 50rem">
-
-                        <div>
-                          <h3 class="card-title" style="text-align: center; margin-top: 10p;color: #edc501">
-                            Características:</h3>
-                          <h4 class="card-text" style="margin: 10px;">
-                            Docíl
-                            <br>
-                            Brincalhão
-                            <br>
-                            Sociavel
-                            <br>
-                            Castrado
-                            <br>
-                            Vermifugado
-                            <br>
-                            Gosta de crianças
-                            <br>
-                          </h4>
-                        </div>
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <p class="card-text">
-                          <h3 class="card-title" style="color: #edc501">Organização:</h3>
-                          <h4 class="card-text">ONG Auqmia</h4>
-
-                          <h3 class="card-title" style="color: #edc501">Historia: </h3>
-                          <h4 class="card-text">Thor é um cachorro muito forte, sofreu um acidente e quase perdeu a
-                            vida, mas logo se recuperou e esta pronto para receber muito carinho.</h4>
-
-                          <h3 class="card-title" style="color:  #edc501">Raça:</h3>
-                          <h4 class="card-text"> </h4>
-
-                          <h3 class="card-title" style="color: #edc501">Idade aproximada:</h3>
-                          <h4 class="card-text"> 6 meses</h4>
-
-
-
-                          <h3 class="card-title" style="color: #edc501">Endereço: </h3>
-                          <h4 class="card-text">Estado: SP
-                            Cidade: São Paulo
-                            Logradouro: Rua Bernardino Bertollotti
-                            Bairro: Jardim Nossa Senhora Aparecida
-                            Cep: 52651-10</h4>
-                          </p>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
-
-           
-              
-              
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-
-  <div class="card" 
-  style="width: 28rem; border-radius: 30px;display: inline-block;margin-right:4%;margin-top: 2%;margin-bottom: 2%;">
-    <img class="card-img-top" src="/Imagens/dog_5.webp" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
-      width="300">
-      <span class=" bottom-4 inset-x-6 bg-warning text-center uppercase text-white font-bold py-2 bg-opacity-200 shadow text-sm sm:text-lg" style="font-size: 30px; text-align: center; align-items: center; justify-content: center ; display: flex;">Adotado</span>
-    <div class="card-body">
-      <h2 class="card-title">Felix <span class="material-symbols-outlined"
-          style="float:right;font-size: 40px; color:darkblue;">
-          male
-        </span></h2>
-      <p class="card-text" style="font-size: 15px;">São Paulo-SP</p>
-      <center>
-        <button type="button" class="btn btn-primary btn-lg" style="text-align: center" data-toggle="modal"
-          data-target="#Adotar41">Visualizar</button>
-      </center>
-      <!-- Modal -->
-      <div class="modal fade" id="Adotar41" tabindex="-1" role="dialog" aria-labelledby="Adotar2" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header" style="display: contents;">
-                          <span class=" bottom-4 inset-x-6 bg-warning text-center uppercase text-white font-bold py-2 bg-opacity-200 shadow text-sm sm:text-lg" style="font-size: 30px; text-align: center; align-items: center; justify-content: center ; display: inline;">Adotado</span>
-
-            </div>
-            <div>
-              <div>
-                <div>
-                  <div class="card mb-3" style="max-width: 1000px; padding: 2%;">
-                    <div class="dados" style="text-align: center;margin-bottom: 10px;">
-                      <h2>Cachorro / Macho / Adulto / Porte médio</h2>
-                    </div>
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="/Imagens/dog_5.webp" class="img-fluid rounded-start"
-                          style="border-radius: 20px;width: 50rem">
-                        <div>
-                          <h3 class="card-title" style="text-align: center; margin-top: 10px;color: #edc501">
-                            Características:</h3>
-                          <h4 class="card-text" style="margin: 10px;">
-                            Docíl
-                            <br>
-                            Brincalhão
-                            <br>
-                            Sociavel
-                            <br>
-                            Carente
-                            <br>
-                            Calmo
-                            <br>
-                            Vive bem em apartamento
-                            <br>
-                            Vive bem e casa com quintal
-                            <br>
-                            Castrado
-                            <br>
-                            Vermifugado
-                            <br>
-                            Gosta de crianças
-                            <br>
-                          </h4>
-                        </div>
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <p class="card-text">
-                          <h3 class="card-title" style="color:#edc501">Organização:</h3>
-                          <h4 class="card-text">Focinho Amigo</h4>
-
-                          <h3 class="card-title" style="color:#edc501">Historia: </h3>
-                          <h4 class="card-text">Infelizmente vivia amarrado na corrente em um sítio desde filhotinho,
-                            às vezes não comia, nem bebia, sentia frio e as condições onde se encontrava eram bem
-                            difíceis
-                            e desesperadoras. Mesmo por tanto tempo nessa condição o brilho e a esperança no olhar
-                            nunca
-                            se apagaram nem a luta e a alegria de viver e agora tive a sorte de uma tia me resgatar
-                            que
-                            está procurando uma família para ter a oportunidade de amar, ser amado e ter um lar para
-                            chamar de seu.</h4>
-
-                          <h3 class="card-title" style="color: #edc501">Raça:</h3>
-                          <h4 class="card-text"> Caramelo</h4>
-
-                          <h3 class="card-title" style="color:#edc501">Idade aproximada:</h3>
-                          <h4 class="card-text"> 3 anos</h4>
 
 
 
-                          <h3 class="card-title" style="color:#edc501">Endereço: </h3>
-                          <h4 class="card-text">Estado: SP
-                            Cidade: São Paulo
-                            Logradouro: Rua Bernardino Bertollotti
-                            Bairro: Jardim Nossa Senhora Aparecida
-                            Cep: 52651-10</h4>
-                          </p>
+    <nav aria-label="Navegação de página exemplo">
+      <ul class="pagination justify-content-center pagination-lg" style="margin-top: 10px;margin-bottom: 30px;">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Próximo</a>
+        </li>
+      </ul>
+    </nav>
 
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
-
-              
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-  </div>
-
-  <div class="card" 
-  style="width: 28rem; border-radius: 30px;display: inline-block;margin-right:4%;margin-top: 2%;margin-bottom: 2%;">
-    <img class="card-img-top" src="/Imagens/dog_6.webp" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
-      width="300">
-      <span class=" bottom-4 inset-x-6 bg-warning text-center uppercase text-white font-bold py-2 bg-opacity-200 shadow text-sm sm:text-lg" style="font-size: 30px; text-align: center; align-items: center; justify-content: center ; display: flex;">Adotado</span>
-    <div class="card-body">
-      <h2 class="card-title">Bolinha <span class="material-symbols-outlined"
-          style="float:right;font-size: 40px; color:darkblue;">
-          male
-        </span></h2>
-      <p class="card-text" style="font-size: 15px;">São Paulo-SP</p>
-      <center>
-        <button type="button" class="btn btn-primary btn-lg" style="text-align: center" data-toggle="modal"
-          data-target="#Adotar43">Visualizar</button>
-      </center>
-      <div class="modal fade" id="Adotar43" tabindex="-1" role="dialog" aria-labelledby="Adotar2" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header" style="display: contents;">
-              <span class=" bottom-4 inset-x-6 bg-warning text-center uppercase text-white font-bold py-2 bg-opacity-200 shadow text-sm sm:text-lg" style="font-size: 30px; text-align: center; align-items: center; justify-content: center ; display: inline;">Adotado</span>
-
-            </div>
-            <div>
-              <div>
-                <div>
-                  <div class="card mb-3" style="max-width: 1000px; padding: 2%">
-                    <div class="dados" style="text-align: center;margin-bottom: 10px;">
-                      <h2>Cachorro / Macho / Adulto / Porte médio</h2>
-                    </div>
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="/Imagens/dog_6.webp" class="img-fluid rounded-start"
-                          style="border-radius: 20px;width: 50rem">
-                        <div>
-                          <h3 class="card-title" style="text-align: center; margin-top: 10px;color:  #edc501">
-                            Características:</h3>
-                          <h4 class="card-text" style="margin: 10px;">
-                            Brincalhão
-                            <br>
-                            Carente
-                            <br>
-                            Calmo
-                            <br>
-                            Vive bem e casa com quintal
-                            <br>
-                            Vermifugado
-                            <br>
-                            Gosta de crianças
-                            <br>
-                          </h4>
-                        </div>
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <p class="card-text">
-                          <h3 class="card-title" style="color:  #edc501">Organização:</h3>
-                          <h4 class="card-text">Ação Animal</h4>
-
-                          <h3 class="card-title" style="color:  #edc501">Historia: </h3>
-                          <h4 class="card-text">Nossa equipe o encontrou com a pata machucada e com muita fome, demos
-                            todo o apoio e hoje ele ja esta melhor e pronto para receber um novo lar</h4>
-
-                          <h3 class="card-title" style="color:  #edc501">Raça:</h3>
-                          <h4 class="card-text"> </h4>
-
-                          <h3 class="card-title" style="color:  #edc501">Idade aproximada:</h3>
-                          <h4 class="card-text"> 2 anos</h4>
-
-
-
-                          <h3 class="card-title" style="color:  #edc501">Endereço: </h3>
-                          <h4 class="card-text">Estado: SP
-                            Cidade: São Paulo
-                            Logradouro: Rua Bernardino Bertollotti
-                            Bairro: Jardim Nossa Senhora Aparecida
-                            Cep: 52651-10</h4>
-                          </p>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
-
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card"
-   style="width: 28rem; border-radius: 30px;display: inline-block;margin-right:5%;margin-top: 2%;margin-bottom: 2%;">
-    <img class="card-img-top" src="/Imagens/dog_7.png" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
-      width="300">
-      <span class=" bottom-4 inset-x-6 bg-warning text-center uppercase text-white font-bold py-2 bg-opacity-200 shadow text-sm sm:text-lg" style="font-size: 30px; text-align: center; align-items: center; justify-content: center ; display: flex;">Adotado</span>
-    <div class="card-body">
-      <h2 class="card-title">Polly <span class="material-symbols-outlined"
-          style="float:right;font-size: 40px; color:deeppink">
-          female
-        </span></h2>
-      <p class="card-text" style="font-size: 15px;">São Paulo-SP</p>
-      <center>
-        <button type="button" class="btn btn-primary btn-lg" style="text-align: center" data-toggle="modal"
-          data-target="#Adotar44">Visualizar</button>
-      </center>
-      <div class="modal fade" id="Adotar44" tabindex="-1" role="dialog" aria-labelledby="Adotar4" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header" style="display: contents;">
-              <span class=" bottom-4 inset-x-6 bg-warning text-center uppercase text-white font-bold py-2 bg-opacity-200 shadow text-sm sm:text-lg" style="font-size: 30px; text-align: center; align-items: center; justify-content: center ; display: inline;">Adotado</span>
-
-            </div>
-            <div>
-              <div>
-                <div>
-                  <div class="card mb-3" style="max-width: 1000px; padding: 2%;">
-                    <div class="dados" style="text-align: center;margin-bottom: 10px;">
-                      <h2>Cachorro / fêmea / Filhote/ Porte Pequeno</h2>
-                    </div>
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="/Imagens/dog_7.png" class="img-fluid rounded-start"
-                          style="border-radius: 20px;width: 50rem">
-                        <div>
-                          <h3 class="card-title" style="text-align: center; margin-top: 10px;color:#edc501">
-                            Características:</h3>
-                          <h4 class="card-text" style="margin: 10px;">
-                            Docíl
-                            <br>
-                            Brincalhão
-                            <br>
-                            Sociavel
-                            <br>
-                            Carente
-                            <br>
-                            Vive bem em apartamento
-                            <br>
-                            Castrado
-                            <br>
-                            Vermifugado
-                            <br>
-                            Gosta de crianças
-                            <br>
-                          </h4>
-                        </div>
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <p class="card-text">
-                          <h3 class="card-title" style="color:#edc501">Organização:</h3>
-                          <h4 class="card-text">Solar</h4>
-
-                          <h3 class="card-title" style="color:#edc501">Historia: </h3>
-                          <h4 class="card-text">Infelizmente Polly foi a única sobrevivente entre suas irmas, porem o
-                            brilho no seu olho nunca apagou, ela esta a busca de um novo lar.</h4>
-
-                          <h3 class="card-title" style="color: #edc501">Raça:</h3>
-                          <h4 class="card-text"> </h4>
-
-                          <h3 class="card-title" style="color:#edc501">Idade aproximada:</h3>
-                          <h4 class="card-text"> 5 meses</h4>
-
-
-
-                          <h3 class="card-title" style="color:#edc501">Endereço: </h3>
-                          <h4 class="card-text">Estado: SP
-                            Cidade: São Paulo
-                            Logradouro: Rua Bernardino Bertollotti
-                            Bairro: Jardim Nossa Senhora Aparecida
-                            Cep: 52651-10</h4>
-                          </p>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
-
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
-  <div class="text-center" style="background-color: snow;font-size: 30px;text-align: center;">
-    Porquê você deve adotar um bichinho:
-    <div class="center-card" style="background-color: snow;font-size: 15px;text-align: center;">
-      <div class="card bg-light mb-3; card border-info"
-        style="max-width: 20rem; display: inline-block; border-radius: 20px; margin-right: 50px;">
-        <div class="text-card">
-          <h3 class="card-title">Você terá um companheiro para todas as horas</h3>
-          <p class="card-text">Animais são companheiros leais e fieis, ter um bichinho é ter um grande amigo para te
-            acompanhar
-            em todas as aventuras.</p>
-        </div>
-      </div>
-      <div class="card bg-light mb-3;card border-info"
-        style="max-width: 20rem;display: inline-block;border-radius: 20px;margin-right: 50px;">
-        <div class="text-card">
-          <h3 class="card-title">Animais estimulam a sociabilidade</h3>
-          <p class="card-text">Se você é declaradamente antissocial, um pet pode te ajudar a resolver uma parte desse
-            problema. Estudos mostram que os animais,
-            principalmente os cães, fazem com que você se torne mais ativo, saia mais de casa e conviva mais com outras
-            pessoas.</p>
-        </div>
-      </div>
-      <div class="card bg-light mb-3;card border-info"
-        style="max-width: 20rem; display: inline-block;border-radius: 20px;margin-right: 50px;">
-        <div class="text-card">
-          <h3 class="card-title">Adoção salva a vida de um animal</h3>
-          <p class="card-text">Adotar um animal é uma grande responsabilidade, e não é só porque você precisará cuidar
-            dele em casa. A adoção é capaz de salvar a vida
-            de um bichinho que poderia estar nas ruas, abandonado, morrendo de fome e possivelmente sofrendo de maus
-            tratos.</p>
-        </div>
-      </div>
-      <div class="card bg-light mb-3;card border-info"
-        style="max-width: 20rem; display: inline-block;border-radius: 20px;margin-right: 50px;">
-        <div class="text-card">
-          <h3 class="card-title">Quem vive com pet tem menos estresse</h3>
-          <p class="card-text">Pesquisas feitas na Universidade da Virgínia, nos EUA, concluíram que pessoas que
-            convivem com animais são menos
-            estressadas e ansiosas do que as que moram sozinhas.</p>
-        </div>
-      </div>
-      <div class="card bg-light mb-3;card border-info"
-        style="max-width: 20rem; display: inline-block;border-radius: 20px;margin-right: 50px;">
-        <div class="text-card">
-          <h3 class="card-title">Animais ajudam a desenvolver responsabilidade</h3>
-          <p class="card-text">Um pet ajuda você a ser mais responsável. Como os bichinhos precisam de constante cuidado
-            com água, alimentação, exercícios e higiene, o cuidador cria noções de
-            responsabilidade que levará para o resto da vida, inclusive para o ambiente de trabalho e nos estudos.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <section id="Sobre"></section>
-
-  <div class="lg:py-10 py-5"
-    style="background-color:snow; text-align: center;max-width: 1000px;margin: auto;margin-top: 100px;">
-    <h1 class="title-lg" style="font-size:40px">Sobre nós</h1>
-    <p class="mt-3 sm:mt-4">
-    </p>
-    <div class="text-xl text-gray-500" style="font-size: 20px; text-align: justify; padding-right: 100px; padding-left: 100px;"> Pet Space é um site para adoção e doação de animais,
-      onde os pets divulgados no site serão disponibilizados
-      por ONGs que queiram fazer parceria.
-      <p></p>Nos criamos a Pet Space com o intuito de oferecer aos pets um lar e para aquelas pessoas que nao tem
-      condições de
-      cuidar de algum pet agora criamos um aplicativo para ajuda-lo
-      <p></p>Este é um projeto desenvolvido por um grupo de 5 alunos que se comoveram com a situação dos animais em que
-      a grande maioria deles estão nas ruas abandonados e isso fez com que nós tomassemos a iniciativa para criamos um
-      site para ajuda-los
-      <div class="text-xl text-gray-500" style="font-size: 20px;"></div>
-      <p></p>
-    </div>
-  </div>
-  
-
-  <div class="lg:py-10 py-5" style="background-color:snow; text-align: center;max-width: 1000px;margin: auto;">
-    <h1 class="title-lg" style="font-size:40px">Como funciona</h1>
-    <p class="mt-3 sm:mt-4">
-    </p>
-    <div class="text-xl text-gray-500" style="font-size: 20px; text-align: justify; padding-right: 100px; padding-left: 100px;">Nós não temos abrigos, e nem fazemos resgates de animais!
-      Nosso trabalho é 100% online, oferecendo visibilidade aos animaizinhos que precisam de um lar. Funciona assim: <p>
+    <div class="lg:py-10 py-5" style="background-color:rgb(237, 195, 6); text-align: center">
+      <h1 class="title-lg" style="font-size: 50px;">Alguns pets que ja foram adotados</h1>
+      <p class="mt-3 sm:mt-4">
       </p>
-      1- ONGs, protetores independentes ou pessoas que precisam doar um animal fazem o seu cadastro gratuitamente e no
-      mesmo instante já podem publicar os animais com detalhes sobre suas características e personalidade;
-      <p></p>
-      2- Pessoas que estão interessadas em ter um novo bichinho vão entrar no site e procurar um que tenha a ver com o
-      perfil dele;
-      <p></p>
-      3- Quando acharem aquele especial, elas clicam em “Adotar” e pronto, é só combinar com a ONG como buscar o
-      mais novo membro da família!
-      
+      <div class="text-xl text-gray-500" style="font-size: 30px;">Olha só estes rostinhos, eles estão muito felizes com
+        o seu novo lar e sua nova família!</div>
     </div>
-  </div>
 
-  <div class="lg:py-10 py-5"
-    style="background-color:snow; text-align: center;max-width: 1000px;margin: auto;margin-bottom: 50px;">
-    <h1 class="title-lg" style="font-size:40px">Quer divulgar um cão ou gato para adoção?</h1>
-    <p class="mt-3 sm:mt-4">
-    </p>
-    <div class="text-xl text-gray-500" style="font-size: 20px; text-align: justify; padding-right: 100px; padding-left: 100px;">
-      Se você está dando lar temporário ou quer divulgar um animal para adoção, faça seu cadastro no site e, em seguida,
-      publique o bichinho. Coloque o máximo de características e fotos sobre ele: assim você aumenta as chances de
-      encontrar alguém que realmente combine com seu perfil, ajudando a evitar decepção e futuros abandonos. Pelo mesmo
-      motivo, seja sincero quanto ao estado de saúde e características do animal.
-      <p></p>Importante: este é um site de adoção e a venda de animais é proibida, ok? Usuários que tentarem vender
-      animais serão banidos do site.
-      <div class="text-xl text-gray-500" style="font-size: 20px;"></div>
+    <div class="card"
+      style="width: 28rem; border-radius: 30px;display: inline-block; margin-right:4%;margin-left:7%;margin-top: 2%;margin-bottom: 2%;">
+      <img class="card-img-top" src="/Imagens/dog_9.webp" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
+        width="300">
+      <span
+        class=" bottom-4 inset-x-6 bg-warning text-center uppercase text-white font-bold py-2 bg-opacity-200 shadow text-sm sm:text-lg"
+        style="font-size: 30px; text-align: center; align-items: center; justify-content: center ; display: flex;">Adotado</span>
+      <div class="card-body">
+        <h2 class="card-title">Thor <span class="material-symbols-outlined"
+            style="float:right;font-size: 40px; color:darkblue;">
+            male
+          </span></h2>
+        <p class="card-text" style="font-size: 15px;">São Paulo-SP</p>
+        <center>
+          <button type="button" class="btn btn-primary btn-lg" style="text-align: center" data-toggle="modal"
+            data-target="#Adotar40">Visualizar</button>
+        </center>
+        <!-- Modal -->
+        <div class="modal fade" id="Adotar40" tabindex="-1" role="dialog" aria-labelledby="Adotar2" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header" style="display: contents;">
+                <span
+                  class=" bottom-4 inset-x-6 bg-warning text-center uppercase text-white font-bold py-2 bg-opacity-200 shadow text-sm sm:text-lg"
+                  style="font-size: 30px; text-align: center; align-items: center; justify-content: center ; display: inline;">Adotado</span>
+
+              </div>
+              <div>
+                <div>
+                  <div>
+                    <div class="card mb-3" style="max-width: 1000px; padding: 2%">
+                      <div class="dados" style="text-align: center;margin-bottom: 10px;">
+                        <h2>Cachorro / Macho / Filhote / Porte Pequeno</h2>
+                      </div>
+                      <div class="row g-0">
+                        <div class="col-md-4">
+
+                          <img src="/Imagens/dog_9.webp" class="img-fluid rounded-start"
+                            style="border-radius: 20px;width: 50rem">
+
+                          <div>
+                            <h3 class="card-title" style="text-align: center; margin-top: 10p;color: #edc501">
+                              Características:</h3>
+                            <h4 class="card-text" style="margin: 10px;">
+                              Docíl
+                              <br>
+                              Brincalhão
+                              <br>
+                              Sociavel
+                              <br>
+                              Castrado
+                              <br>
+                              Vermifugado
+                              <br>
+                              Gosta de crianças
+                              <br>
+                            </h4>
+                          </div>
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <p class="card-text">
+                            <h3 class="card-title" style="color: #edc501">Organização:</h3>
+                            <h4 class="card-text">ONG Auqmia</h4>
+
+                            <h3 class="card-title" style="color: #edc501">Historia: </h3>
+                            <h4 class="card-text">Thor é um cachorro muito forte, sofreu um acidente e quase perdeu a
+                              vida, mas logo se recuperou e esta pronto para receber muito carinho.</h4>
+
+                            <h3 class="card-title" style="color:  #edc501">Raça:</h3>
+                            <h4 class="card-text"> </h4>
+
+                            <h3 class="card-title" style="color: #edc501">Idade aproximada:</h3>
+                            <h4 class="card-text"> 6 meses</h4>
+
+
+
+                            <h3 class="card-title" style="color: #edc501">Endereço: </h3>
+                            <h4 class="card-text">Estado: SP
+                              Cidade: São Paulo
+                              Logradouro: Rua Bernardino Bertollotti
+                              Bairro: Jardim Nossa Senhora Aparecida
+                              Cep: 52651-10</h4>
+                            </p>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card"
+      style="width: 28rem; border-radius: 30px;display: inline-block;margin-right:4%;margin-top: 2%;margin-bottom: 2%;">
+      <img class="card-img-top" src="/Imagens/dog_5.webp" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
+        width="300">
+      <span
+        class=" bottom-4 inset-x-6 bg-warning text-center uppercase text-white font-bold py-2 bg-opacity-200 shadow text-sm sm:text-lg"
+        style="font-size: 30px; text-align: center; align-items: center; justify-content: center ; display: flex;">Adotado</span>
+      <div class="card-body">
+        <h2 class="card-title">Felix <span class="material-symbols-outlined"
+            style="float:right;font-size: 40px; color:darkblue;">
+            male
+          </span></h2>
+        <p class="card-text" style="font-size: 15px;">São Paulo-SP</p>
+        <center>
+          <button type="button" class="btn btn-primary btn-lg" style="text-align: center" data-toggle="modal"
+            data-target="#Adotar41">Visualizar</button>
+        </center>
+        <!-- Modal -->
+        <div class="modal fade" id="Adotar41" tabindex="-1" role="dialog" aria-labelledby="Adotar2" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header" style="display: contents;">
+                <span
+                  class=" bottom-4 inset-x-6 bg-warning text-center uppercase text-white font-bold py-2 bg-opacity-200 shadow text-sm sm:text-lg"
+                  style="font-size: 30px; text-align: center; align-items: center; justify-content: center ; display: inline;">Adotado</span>
+
+              </div>
+              <div>
+                <div>
+                  <div>
+                    <div class="card mb-3" style="max-width: 1000px; padding: 2%;">
+                      <div class="dados" style="text-align: center;margin-bottom: 10px;">
+                        <h2>Cachorro / Macho / Adulto / Porte médio</h2>
+                      </div>
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="/Imagens/dog_5.webp" class="img-fluid rounded-start"
+                            style="border-radius: 20px;width: 50rem">
+                          <div>
+                            <h3 class="card-title" style="text-align: center; margin-top: 10px;color: #edc501">
+                              Características:</h3>
+                            <h4 class="card-text" style="margin: 10px;">
+                              Docíl
+                              <br>
+                              Brincalhão
+                              <br>
+                              Sociavel
+                              <br>
+                              Carente
+                              <br>
+                              Calmo
+                              <br>
+                              Vive bem em apartamento
+                              <br>
+                              Vive bem e casa com quintal
+                              <br>
+                              Castrado
+                              <br>
+                              Vermifugado
+                              <br>
+                              Gosta de crianças
+                              <br>
+                            </h4>
+                          </div>
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <p class="card-text">
+                            <h3 class="card-title" style="color:#edc501">Organização:</h3>
+                            <h4 class="card-text">Focinho Amigo</h4>
+
+                            <h3 class="card-title" style="color:#edc501">Historia: </h3>
+                            <h4 class="card-text">Infelizmente vivia amarrado na corrente em um sítio desde filhotinho,
+                              às vezes não comia, nem bebia, sentia frio e as condições onde se encontrava eram bem
+                              difíceis
+                              e desesperadoras. Mesmo por tanto tempo nessa condição o brilho e a esperança no olhar
+                              nunca
+                              se apagaram nem a luta e a alegria de viver e agora tive a sorte de uma tia me resgatar
+                              que
+                              está procurando uma família para ter a oportunidade de amar, ser amado e ter um lar para
+                              chamar de seu.</h4>
+
+                            <h3 class="card-title" style="color: #edc501">Raça:</h3>
+                            <h4 class="card-text"> Caramelo</h4>
+
+                            <h3 class="card-title" style="color:#edc501">Idade aproximada:</h3>
+                            <h4 class="card-text"> 3 anos</h4>
+
+
+
+                            <h3 class="card-title" style="color:#edc501">Endereço: </h3>
+                            <h4 class="card-text">Estado: SP
+                              Cidade: São Paulo
+                              Logradouro: Rua Bernardino Bertollotti
+                              Bairro: Jardim Nossa Senhora Aparecida
+                              Cep: 52651-10</h4>
+                            </p>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="card"
+      style="width: 28rem; border-radius: 30px;display: inline-block;margin-right:4%;margin-top: 2%;margin-bottom: 2%;">
+      <img class="card-img-top" src="/Imagens/dog_6.webp" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
+        width="300">
+      <span
+        class=" bottom-4 inset-x-6 bg-warning text-center uppercase text-white font-bold py-2 bg-opacity-200 shadow text-sm sm:text-lg"
+        style="font-size: 30px; text-align: center; align-items: center; justify-content: center ; display: flex;">Adotado</span>
+      <div class="card-body">
+        <h2 class="card-title">Bolinha <span class="material-symbols-outlined"
+            style="float:right;font-size: 40px; color:darkblue;">
+            male
+          </span></h2>
+        <p class="card-text" style="font-size: 15px;">São Paulo-SP</p>
+        <center>
+          <button type="button" class="btn btn-primary btn-lg" style="text-align: center" data-toggle="modal"
+            data-target="#Adotar43">Visualizar</button>
+        </center>
+        <div class="modal fade" id="Adotar43" tabindex="-1" role="dialog" aria-labelledby="Adotar2" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header" style="display: contents;">
+                <span
+                  class=" bottom-4 inset-x-6 bg-warning text-center uppercase text-white font-bold py-2 bg-opacity-200 shadow text-sm sm:text-lg"
+                  style="font-size: 30px; text-align: center; align-items: center; justify-content: center ; display: inline;">Adotado</span>
+
+              </div>
+              <div>
+                <div>
+                  <div>
+                    <div class="card mb-3" style="max-width: 1000px; padding: 2%">
+                      <div class="dados" style="text-align: center;margin-bottom: 10px;">
+                        <h2>Cachorro / Macho / Adulto / Porte médio</h2>
+                      </div>
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="/Imagens/dog_6.webp" class="img-fluid rounded-start"
+                            style="border-radius: 20px;width: 50rem">
+                          <div>
+                            <h3 class="card-title" style="text-align: center; margin-top: 10px;color:  #edc501">
+                              Características:</h3>
+                            <h4 class="card-text" style="margin: 10px;">
+                              Brincalhão
+                              <br>
+                              Carente
+                              <br>
+                              Calmo
+                              <br>
+                              Vive bem e casa com quintal
+                              <br>
+                              Vermifugado
+                              <br>
+                              Gosta de crianças
+                              <br>
+                            </h4>
+                          </div>
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <p class="card-text">
+                            <h3 class="card-title" style="color:  #edc501">Organização:</h3>
+                            <h4 class="card-text">Ação Animal</h4>
+
+                            <h3 class="card-title" style="color:  #edc501">Historia: </h3>
+                            <h4 class="card-text">Nossa equipe o encontrou com a pata machucada e com muita fome, demos
+                              todo o apoio e hoje ele ja esta melhor e pronto para receber um novo lar</h4>
+
+                            <h3 class="card-title" style="color:  #edc501">Raça:</h3>
+                            <h4 class="card-text"> </h4>
+
+                            <h3 class="card-title" style="color:  #edc501">Idade aproximada:</h3>
+                            <h4 class="card-text"> 2 anos</h4>
+
+
+
+                            <h3 class="card-title" style="color:  #edc501">Endereço: </h3>
+                            <h4 class="card-text">Estado: SP
+                              Cidade: São Paulo
+                              Logradouro: Rua Bernardino Bertollotti
+                              Bairro: Jardim Nossa Senhora Aparecida
+                              Cep: 52651-10</h4>
+                            </p>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card"
+      style="width: 28rem; border-radius: 30px;display: inline-block;margin-right:5%;margin-top: 2%;margin-bottom: 2%;">
+      <img class="card-img-top" src="/Imagens/dog_7.png" alt="" style="border-radius: 30px 30px 0px 0px;" height="300"
+        width="300">
+      <span
+        class=" bottom-4 inset-x-6 bg-warning text-center uppercase text-white font-bold py-2 bg-opacity-200 shadow text-sm sm:text-lg"
+        style="font-size: 30px; text-align: center; align-items: center; justify-content: center ; display: flex;">Adotado</span>
+      <div class="card-body">
+        <h2 class="card-title">Polly <span class="material-symbols-outlined"
+            style="float:right;font-size: 40px; color:deeppink">
+            female
+          </span></h2>
+        <p class="card-text" style="font-size: 15px;">São Paulo-SP</p>
+        <center>
+          <button type="button" class="btn btn-primary btn-lg" style="text-align: center" data-toggle="modal"
+            data-target="#Adotar44">Visualizar</button>
+        </center>
+        <div class="modal fade" id="Adotar44" tabindex="-1" role="dialog" aria-labelledby="Adotar4" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header" style="display: contents;">
+                <span
+                  class=" bottom-4 inset-x-6 bg-warning text-center uppercase text-white font-bold py-2 bg-opacity-200 shadow text-sm sm:text-lg"
+                  style="font-size: 30px; text-align: center; align-items: center; justify-content: center ; display: inline;">Adotado</span>
+
+              </div>
+              <div>
+                <div>
+                  <div>
+                    <div class="card mb-3" style="max-width: 1000px; padding: 2%;">
+                      <div class="dados" style="text-align: center;margin-bottom: 10px;">
+                        <h2>Cachorro / fêmea / Filhote/ Porte Pequeno</h2>
+                      </div>
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="/Imagens/dog_7.png" class="img-fluid rounded-start"
+                            style="border-radius: 20px;width: 50rem">
+                          <div>
+                            <h3 class="card-title" style="text-align: center; margin-top: 10px;color:#edc501">
+                              Características:</h3>
+                            <h4 class="card-text" style="margin: 10px;">
+                              Docíl
+                              <br>
+                              Brincalhão
+                              <br>
+                              Sociavel
+                              <br>
+                              Carente
+                              <br>
+                              Vive bem em apartamento
+                              <br>
+                              Castrado
+                              <br>
+                              Vermifugado
+                              <br>
+                              Gosta de crianças
+                              <br>
+                            </h4>
+                          </div>
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <p class="card-text">
+                            <h3 class="card-title" style="color:#edc501">Organização:</h3>
+                            <h4 class="card-text">Solar</h4>
+
+                            <h3 class="card-title" style="color:#edc501">Historia: </h3>
+                            <h4 class="card-text">Infelizmente Polly foi a única sobrevivente entre suas irmas, porem o
+                              brilho no seu olho nunca apagou, ela esta a busca de um novo lar.</h4>
+
+                            <h3 class="card-title" style="color: #edc501">Raça:</h3>
+                            <h4 class="card-text"> </h4>
+
+                            <h3 class="card-title" style="color:#edc501">Idade aproximada:</h3>
+                            <h4 class="card-text"> 5 meses</h4>
+
+
+
+                            <h3 class="card-title" style="color:#edc501">Endereço: </h3>
+                            <h4 class="card-text">Estado: SP
+                              Cidade: São Paulo
+                              Logradouro: Rua Bernardino Bertollotti
+                              Bairro: Jardim Nossa Senhora Aparecida
+                              Cep: 52651-10</h4>
+                            </p>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="text-center" style="background-color: snow;font-size: 30px;text-align: center;">
+      <div class="title-adote">
+        <h1>Porquê você deve adotar um bichinho: </h1>
+      </div>
+      <div class="center-card" style="background-color: snow;font-size: 15px;text-align: center;">
+        <div class="card bg-light mb-3; card border-info "
+          style="max-width: 20rem;  border-radius: 20px; margin-right: 50px; margin-top: 15px;">
+          <div class="text-card">
+            <h3 class="card-title">Você terá um companheiro para todas as horas</h3>
+            <p class="card-text">Animais são companheiros leais e fieis, ter um bichinho é ter um grande amigo para te
+              acompanhar
+              em todas as aventuras.</p>
+          </div>
+        </div>
+        <div class="card bg-light mb-3;card border-info"
+          style="max-width: 20rem;border-radius: 20px;margin-right: 50px;">
+          <div class="text-card">
+            <h3 class="card-title">Animais estimulam a sociabilidade</h3>
+            <p class="card-text">Se você é declaradamente antissocial, um pet pode te ajudar a resolver uma parte desse
+              problema. Estudos mostram que os animais,
+              principalmente os cães, fazem com que você se torne mais ativo, saia mais de casa e conviva mais com
+              outras
+              pessoas.</p>
+          </div>
+        </div>
+        <div class="card bg-light mb-3;card border-info"
+          style="max-width: 20rem; border-radius: 20px;margin-right: 50px;">
+          <div class="text-card">
+            <h3 class="card-title">Adoção salva a vida de um animal</h3>
+            <p class="card-text">Adotar um animal é uma grande responsabilidade, e não é só porque você precisará cuidar
+              dele em casa. A adoção é capaz de salvar a vida
+              de um bichinho que poderia estar nas ruas, abandonado, morrendo de fome e possivelmente sofrendo de maus
+              tratos.</p>
+          </div>
+        </div>
+        <div class="card bg-light mb-3;card border-info"
+          style="max-width: 20rem; border-radius: 20px;margin-right: 50px;">
+          <div class="text-card">
+            <h3 class="card-title">Quem vive com pet tem menos estresse</h3>
+            <p class="card-text">Pesquisas feitas na Universidade da Virgínia, nos EUA, concluíram que pessoas que
+              convivem com animais são menos
+              estressadas e ansiosas do que as que moram sozinhas.</p>
+          </div>
+        </div>
+        <div class="card bg-light mb-3;card border-info"
+          style="max-width: 20rem; border-radius: 20px;margin-right: 50px;">
+          <div class="text-card">
+            <h3 class="card-title">Animais ajudam a desenvolver responsabilidade</h3>
+            <p class="card-text">Um pet ajuda você a ser mais responsável. Como os bichinhos precisam de constante
+              cuidado
+              com água, alimentação, exercícios e higiene, o cuidador cria noções de
+              responsabilidade que levará para o resto da vida, inclusive para o ambiente de trabalho e nos estudos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <section id="Sobre"></section>
+
+    <div class="lg:py-10 py-5"
+      style="background-color:snow; text-align: center;max-width: 1000px;margin: auto;margin-top: 100px;">
+      <h1 class="title-lg" style="font-size:40px">Sobre nós</h1>
+      <p class="mt-3 sm:mt-4">
+      </p>
+      <div class="text-xl text-gray-500"
+        style="font-size: 20px; text-align: justify; padding-right: 100px; padding-left: 100px;"> Pet Space é um site
+        para adoção e doação de animais,
+        onde os pets divulgados no site serão disponibilizados
+        por ONGs que queiram fazer parceria.
+        <p></p>Nos criamos a Pet Space com o intuito de oferecer aos pets um lar e para aquelas pessoas que nao tem
+        condições de
+        cuidar de algum pet agora criamos um aplicativo para ajuda-lo
+        <p></p>Este é um projeto desenvolvido por um grupo de 5 alunos que se comoveram com a situação dos animais em
+        que
+        a grande maioria deles estão nas ruas abandonados e isso fez com que nós tomassemos a iniciativa para criamos um
+        site para ajuda-los
+        <div class="text-xl text-gray-500" style="font-size: 20px;"></div>
+        <p></p>
+      </div>
+    </div>
+
+
+    <div class="lg:py-10 py-5" style="background-color:snow; text-align: center;max-width: 1000px;margin: auto;">
+      <h1 class="title-lg" style="font-size:40px">Como funciona</h1>
+      <p class="mt-3 sm:mt-4">
+      </p>
+      <div class="text-xl text-gray-500"
+        style="font-size: 20px; text-align: justify; padding-right: 100px; padding-left: 100px;">Nós não temos abrigos,
+        e nem fazemos resgates de animais!
+        Nosso trabalho é 100% online, oferecendo visibilidade aos animaizinhos que precisam de um lar. Funciona assim:
+        <p>
+        </p>
+        1- ONGs, protetores independentes ou pessoas que precisam doar um animal fazem o seu cadastro gratuitamente e no
+        mesmo instante já podem publicar os animais com detalhes sobre suas características e personalidade;
+        <p></p>
+        2- Pessoas que estão interessadas em ter um novo bichinho vão entrar no site e procurar um que tenha a ver com o
+        perfil dele;
+        <p></p>
+        3- Quando acharem aquele especial, elas clicam em “Adotar” e pronto, é só combinar com a ONG como buscar o
+        mais novo membro da família!
+
+      </div>
+    </div>
+
+    <div class="lg:py-10 py-5"
+      style="background-color:snow; text-align: center;max-width: 1000px;margin: auto;margin-bottom: 50px;">
+      <h1 class="title-lg" style="font-size:40px">Quer divulgar um cão ou gato para adoção?</h1>
+      <p class="mt-3 sm:mt-4">
+      </p>
+      <div class="text-xl text-gray-500"
+        style="font-size: 20px; text-align: justify; padding-right: 100px; padding-left: 100px;">
+        Se você está dando lar temporário ou quer divulgar um animal para adoção, faça seu cadastro no site e, em
+        seguida,
+        publique o bichinho. Coloque o máximo de características e fotos sobre ele: assim você aumenta as chances de
+        encontrar alguém que realmente combine com seu perfil, ajudando a evitar decepção e futuros abandonos. Pelo
+        mesmo
+        motivo, seja sincero quanto ao estado de saúde e características do animal.
+        <p></p>Importante: este é um site de adoção e a venda de animais é proibida, ok? Usuários que tentarem vender
+        animais serão banidos do site.
+        <div class="text-xl text-gray-500" style="font-size: 20px;"></div>
+        <p></p>
+        <section id="Parcerias"></section>
+      </div>
+    </div>
+
+
+    <div class="lg:py-10 py-5" style="background-color:snow; text-align: center">
+      <h1 class="title-lg" style="font-size: 50px;">Parcerias</h1>
+      <p class="mt-3 sm:mt-4">
+      </p>
+      <div class="text-xl text-gray-500" style="font-size: 30px;">Algumas das ONGs que já estão fazendo parceria
+        conosco:
+      </div>
+      <div class="text-xl text-gray-500" style="font-size: 30px;"></div>
       <p></p>
-      <section id="Parcerias"></section>
-    </div>
-  </div>
-
-
-  <div class="lg:py-10 py-5" style="background-color:snow; text-align: center">
-    <h1 class="title-lg" style="font-size: 50px;">Parcerias</h1>
-    <p class="mt-3 sm:mt-4">
-    </p>
-    <div class="text-xl text-gray-500" style="font-size: 30px;">Algumas das ONGs que já estão fazendo parceria conosco:
-    </div>
-    <div class="text-xl text-gray-500" style="font-size: 30px;"></div>
-    <p></p>
 
 
 
@@ -2335,28 +2490,28 @@
       </p>
       <div class="text-xl text-gray-500" style="font-size: 20px;">Caso também queira fazer parte da nossa equipe clique
         no botão abaixo para ser redirecionado para um formulario</div>
-      <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSdBCnaq5G4_w84mAnRwmzuWjTqoCT1-hThaoTLDls3Lj3WdyQ/viewform?usp=sf_link">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBCnaq5G4_w84mAnRwmzuWjTqoCT1-hThaoTLDls3Lj3WdyQ/viewform?usp=sf_link"
+        target="_blank">
         <button type="button" style="margin-top: 20px;" class="btn btn-outline-primary btn-lg" data-toggle="modal"
           data-target="#Login">Entrar</button>
       </a>
+    </div>
+
+
+
+
+
+    <footer class="bg-dark text-light">
+      <div class="container-fluid py-2">
+      </div>
+      <div class="text-center">
+        <p>Somos uma organização que busca mudar a vida de varios pets e de várias pessoas.</p>
+      </div>
+
+      <div class="text-center" style="background-color: #333; padding: 30px;">
+        Pet Space Copyright © 2022.<p> © Todos os direitos reservados - Somos a PetSpace. Desde 2022 no mercado.</p>
+      </div>
   </div>
-
-
-
-
-
-  <footer class="bg-dark text-light">
-    <div class="container-fluid py-2">
-    </div>
-    <div class="text-center">
-      <p>Somos uma organização que busca mudar a vida de varios pets e de várias pessoas.</p>
-    </div>
-
-    <div class="text-center" style="background-color: #333; padding: 30px;">
-      Pet Space Copyright © 2022.<p> © Todos os direitos reservados - Somos a PetSpace. Desde 2022 no mercado.</p>
-    </div>
-    </div>
   </footer>
 
 </body>
