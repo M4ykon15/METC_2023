@@ -461,16 +461,17 @@ body {
 
 .text-card {
     height: 400px;
-    padding: 10px;
+    padding: 15px;
 }
 
 .center-card {
     width: 100vw;
     height: 530px;
-    margin: -50px 0;
+    margin: -50px -20px;
     display: flex;
     justify-content: center;
     align-items: center;
+   padding-left: 75px;
 }
 
 .card-box{
@@ -478,7 +479,7 @@ body {
     width: 100vw;
     max-height: 400px;
     display: flex;
-    margin: 30px 0;
+    margin: 30px 0px;
     justify-content: space-between;
     align-items: center ;
     box-sizing: border-box;
@@ -489,3 +490,157 @@ body {
     height: 200px;
 }
 
+.title-adote{
+    height: 80px;
+    width: 100%;
+    margin: 25px;
+    padding-top: 35px;
+}
+@media (max-width:1250px) {
+    /* .text-card{
+        display: block;
+    } */
+    .center-card{
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        /* bottom: 20px, 0px, 20px, 0px ; */
+    }
+    .card{
+        margin-bottom: 15px;
+    }
+}
+.button {
+    align-items: center;
+}
+ 
+    #formato {
+      background-color: #fff;
+      padding-left: 100px;
+      padding-right: 100px;
+      padding-top: 50px;
+      padding-bottom: 20px;
+      border-radius: 5px
+    }
+
+    label {
+      display: block;
+    }
+
+  #docil {
+    float: left;
+    margin-top: 0.3%;
+    margin-right: 0.5%;
+  }
+  #brincalhao {
+    float: left;
+    margin-top: 0.3%;
+    margin-right: 0.5%;
+  }
+  #sociavel {
+    float: left;
+    margin-top: 0.3%;
+    margin-right: 0.5%;
+  }
+  #carente {
+    float: left;
+    margin-top: 0.3%;
+    margin-right: 0.5%;
+  }
+  #calmo {
+    float: left;
+    margin-top: 0.3%;
+    margin-right: 0.5%;
+  }
+  #vive_apartamento {
+    float: left;
+    margin-top: 0.3%;
+    margin-right: 0.5%;
+  }
+  #vive_casa_quintal {
+    float: left;
+    margin-top: 0.3%;
+    margin-right: 0.5%;
+  }
+  #castrado {
+    float: left;
+    margin-top: 0.3%;
+    margin-right: 0.5%;
+  }
+  #vermifugado {
+    float: left;
+    margin-top: 0.3%;
+    margin-right: 0.5%;
+  }
+  #gosta_criancas {
+    float: left;
+    margin-top: 0.3%;
+    margin-right: 0.5%;
+  }
+  #endereco {
+    font-size: 15px;
+  }
+  
+  #nome_pet {
+    font-size: 15px;
+  }
+  
+  #especie {
+    font-size: 15px;
+  }
+  
+  #raca {
+    font-size: 15px;
+  }
+  
+  #idade {
+    font-size: 15px;
+  }
+  
+  #porte {
+    font-size: 15px;
+  }
+  
+  #sexo {
+    font-size: 15px;
+  }
+  
+
+    input[type="text"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #585858f2;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #585858f2;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+
+
+    textarea {
+      height: 100px;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
