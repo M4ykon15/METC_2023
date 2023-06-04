@@ -11,78 +11,33 @@ $(".modal-backdrop").css("display","none");
 const offcanvasElementList = document.querySelectorAll('.offcanvas')
 const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))
 
+ // Função para aplicar os filtros
+ function applyFilters() {
+  const species = document.getElementById('species-filter').value;
+  const gender = document.getElementById('gender-filter').value;
+  const size = document.getElementById('size-filter').value;
+  const breed = document.getElementById('breed-filter').value;
 
-function exibirRacas() {
-  var especieSelecionada = document.getElementById("especie").value;
-  var racaSelect = document.getElementById("raca");
+  const animals = document.getElementsByClassName('animal');
 
-  // Limpar as opções existentes
-  racaSelect.innerHTML = "";
+  for (let i = 0; i < animals.length; i++) {
+      const animal = animals[i];
 
-  // Adicionar as opções de raças de acordo com a espécie selecionada
-  if (especieSelecionada === "cachorro") {
-    var racasCachorro = ["Labrador Retriever",
-      "Pastor Alemão",
-     "Bulldog Francês",
-      "Golden Retriever",
-      "Beagle",
-      "Poodle",
-      "Boxer",
-      "Rottweiler",
-      "Yorkshire Terrier",
-      "Dachshund (Teckel)",
-      "Border Collie",
-      "Schnauzer",
-      "Chihuahua",
-      "Bichon Frisé",
-      "Husky Siberiano",
-      "Doberman Pinscher",
-      "Shih Tzu",
-      "Cavalier King Charles Spaniel",
-      "Bulldog Inglês",
-      "Maltese",
-      "Pug",
-      "Staffordshire Bull Terrier",
-      "Great Dane",
-      "Cocker Spaniel",
-      "Australian Shepherd",
-      "Bernese Mountain Dog",
-      "Boston Terrier",
-      "West Highland White Terrier",
-      "Scottish Terrier",
-      "Newfoundland",
-    "Outro" ]; // Exemplo de raças de cachorros
+      const speciesMatch = !species || animal.getAttribute('data-species') === species;
+      const genderMatch = !gender || animal.getAttribute('data-gender') === gender;
+      const sizeMatch = !size || animal.getAttribute('data-size') === size;
+      const breedMatch = !breed || animal.getAttribute('data-breed') === breed;
 
-    for (var i = 0; i < racasCachorro.length; i++) {
-      var option = document.createElement("option");
-      option.text = racasCachorro[i];
-      racaSelect.add(option);
-    }
-  } else if (especieSelecionada === "gato") {
-    var racasGato = ["Siamês",
-      "Persa",
-      "Maine Coon",
-      "Ragdoll",
-      "Bengal",
-      "British Shorthair",
-      "Sphynx",
-      "Exotic Shorthair",
-      "Abissínio",
-      "Scottish Fold (Dobra Escocesa)",
-     " Siamese Oriental (Oriental de Pelo Curto)",
-     " Birmanês",
-     " Himalaio",
-      "Devon Rex",
-      "Azul Russo",
-      "Savannah",
-     " Tonquinês",
-      "Maine Coon",
-    "Outro"]; // Exemplo de raças de gatos
-
-    for (var i = 0; i < racasGato.length; i++) {
-      var option = document.createElement("option");
-      option.text = racasGato[i];
-      racaSelect.add(option);
-    }
+      if (speciesMatch && genderMatch && sizeMatch && breedMatch) {
+          animal.style.display = 'block';
+      } else {
+          animal.style.display = 'none';
+      }
   }
 }
+
+// Event listeners para acionar a função applyFilters() quando os filtros são alterados
+document.getElementById('species-filter').addEventListener('change', applyFilters);
+document.getElementById('gender-filter').addEventListener('change', applyFilters);
+document.getElementById('size-filter').addEventListener('change', applyFilters);
+document.getElementById('breed-filter').addEventListener('change', applyFilters);
