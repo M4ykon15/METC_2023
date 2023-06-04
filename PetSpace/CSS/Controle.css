@@ -434,7 +434,7 @@ body {
 .Dashboard {
   font-size: 40px;
   text-align: center;
-  background-color:lawngreen;
+  background-color:rgba(0, 252, 4, 0.701);
   padding: 4%;
   height: 30%;
   width: 100%;
@@ -560,4 +560,12 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: #45a049;
+}
+#tamanho_botao{
+    line-height: 25px;
+    font-size: 200%;
+}
+#imagem{
+    max-width: 150px;
+    max-height: 150px;
 }
