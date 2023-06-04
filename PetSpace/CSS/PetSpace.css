@@ -522,5 +522,48 @@ body {
       padding-bottom: 20px;
       border-radius: 5px
     }
+    #tamanho_botao{
+        line-height: 25px;
+        font-size: 200%;
+    }
+    #search-form {
+        text-align: center;
+        margin-top: 30px;
+    }
+    #search-input {
+        width: 300px;
+        height: 30px;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+    #search-button {
+        height: 30px;
+        font-size: 16px;
+        border-radius: 5px;
+    }
 
-   
+    .filter-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .filter-label {
+        margin-right: 10px;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+
+    .filter-select {
+        padding: 5px;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+
+    .animal {
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #f5f5f5;
+    }
+
