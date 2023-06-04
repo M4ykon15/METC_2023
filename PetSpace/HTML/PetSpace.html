@@ -60,12 +60,55 @@
           <li><a href="#Adotar">Adotar</a></li>
 
           <li><a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSc353_10HddS_J4RQXACfqOb33Tm5WIQwrcrowcl6hE4vpDrQ/viewform?usp=sf_link"
-              target="_blank">Doar</a>
+              href="Controle.html">Doar</a>
           </li>
           <li><a href="#Sobre">Sobre nós</a></li>
           <li><a href="#Parcerias">Parcerias</a></li>
+          <li><a href="#" data-toggle="modal"
+            data-target="#Perfil">Perfil</a></li>
 
+
+          <div class="modal fade" id="Perfil" tabindex="-1" role="dialog"  aria-hidden="true">
+            <div class="modal-dialog modal-sm" >
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title" id="TituloModalCentralizado">Perfil</h1>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div>
+                  <div>
+                    <div>
+                      <div class="card mb-3" style="max-width: 1000px; padding: 2%">
+                        <div class="dados" style="text-align: center;margin-bottom: 10px;">
+                          <h2>Dados Pessoais</h2>
+                        </div>
+                      
+                         
+                           
+                              <h3 class="card-title" style="text-align: center;color: #00ff00">
+                                Email</h3>
+                                <h4 class="card-text">admin123@gmail.com</h4>
+                                <h3 class="card-title" style="text-align: center;color: #00ff00">
+                                  Senha</h3>
+                                  <h4 class="card-text">admin123</h4>
+                                  <div class="tab">
+                                  
+                                    <button id="tamanho_botao" class="tablinks" type="button" class="btn btn-outline-light btn-lg" onclick="logout()">Logout</button>
+                                
+                                  </div>
+                                
+            
+                                
+                            
+                        
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+</li>
         </ul>
       </div>
       <span class="navTrigger">
@@ -75,7 +118,6 @@
       </span>
     </div>
   </nav>
-
 
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -136,6 +178,47 @@
     <p></p>
   </div>
 
+
+    
+    <div class="container">
+      <div class="filter-container">
+          <div class="filter-label">Espécie:</div>
+          <select class="filter-select" id="species-filter">
+              <option value="">Todas</option>
+              <option value="gato">Gato</option>
+              <option value="cachorro">Cachorro</option>
+          </select>
+      </div>
+
+      <div class="filter-container">
+          <div class="filter-label">Sexo:</div>
+          <select class="filter-select" id="gender-filter">
+              <option value="">Ambos</option>
+              <option value="macho">Macho</option>
+              <option value="femea">Fêmea</option>
+          </select>
+      </div>
+
+      <div class="filter-container">
+          <div class="filter-label">Porte:</div>
+          <select class="filter-select" id="size-filter">
+              <option value="">Qualquer</option>
+              <option value="pequeno">Pequeno</option>
+              <option value="medio">Médio</option>
+              <option value="grande">Grande</option>
+          </select>
+      </div>
+      </div>
+</div>
+<div id="search-form">
+  <form action="#" method="GET">
+      <input type="text" id="search-input" name="search" placeholder="Digite o nome do animal">
+      <input type="submit" id="search-button" value="Pesquisar">
+  </form>
+</div>
+
+<div id="search-results">
+  <!-- Aqui é onde os resultados da pesquisa serão exibidos -->
 
 
   <div class="PETS">
@@ -2320,6 +2403,18 @@
       </div>
     </div>
 
+    <div class="lg:py-10 py-5" style="background-color:snow; text-align: center;max-width: 1000px;margin: auto;">
+      <h1 class="title-lg" style="font-size:40px">Nossa missão</h1>
+      <p class="mt-3 sm:mt-4">
+      </p>
+      <div class="text-xl text-gray-500"
+        style="font-size: 20px; text-align: justify; padding-right: 100px; padding-left: 100px;">
+        A nossa missão é fornecer uma plataforma online que facilite o encontro de animais em busca de um lar permanente e pessoas interessadas em adotar ou doar um animal de estimação. O objetivo principal é promover o bem-estar dos animais, ajudando-os a encontrar um lar amoroso e responsável, ao mesmo tempo em que conscientiza sobre a importância da adoção e do cuidado adequado aos animais de estimação.
+
+        Através desse site, o objetivo é conectar animais resgatados, abandonados, perdidos ou em situação de risco com pessoas que desejam adotar um companheiro peludo.<p> Além disso, o site também pode permitir que indivíduos que não podem mais cuidar de seus animais os doem para encontrar um novo lar adequado, evitando que sejam abandonados ou maltratados.</p>
+      <p>O nosso propósito é, portanto, ser uma plataforma confiável, segura e de fácil acesso para promover a adoção responsável, a conscientização sobre o abandono de animais e o bem-estar animal. Através dessa plataforma, espera-se criar um impacto positivo na vida de animais em necessidade, conectando-os com famílias amorosas e dedicadas, proporcionando-lhes uma segunda chance de ter um lar feliz e carinhoso.</p>
+      </div>
+    </div>
 
     <div class="lg:py-10 py-5" style="background-color:snow; text-align: center;max-width: 1000px;margin: auto;">
       <h1 class="title-lg" style="font-size:40px">Como funciona</h1>
