@@ -119,3 +119,120 @@ function logout() {
   // Código para realizar o logout
   alert("Logout realizado com sucesso!");
 }
+function mostrarFoto(event) {
+  var imagem = document.getElementById('imagem');
+  imagem.src = URL.createObjectURL(event.target.files[0]);
+}
+document.getElementById('formato').addEventListener('submit', function(event) {
+  event.preventDefault(); // impede o envio do formulário
+
+  // Obtém os valores dos campos do formulário
+  var nomePet = document.getElementById('nome_pet').value;
+  var sexo = document.getElementById('sexo').value;
+  var especie = document.getElementById('especie').value;
+  var raca = document.getElementById('raca').value;
+  var idade = document.getElementById('idade').value;
+  var porte = document.getElementById('porte').value;
+  var caracteristicas = Array.from(document.querySelectorAll('input[name="caracteristicas[]"]:checked')).map(function(element) {
+    return element.value;
+  });
+  var endereco = document.getElementById('endereco').value;
+
+  // Cria uma nova linha na tabela com os valores do formulário
+  var tabela = document.querySelector('#tabela-dados tbody');
+  var novaLinha = tabela.insertRow();
+  novaLinha.innerHTML = `
+    <td><img src="#" alt="Foto"></td>
+    <td>${sexo}</td>
+    <td>${especie}</td>
+    <td>${raca}</td>
+    <td>${idade}</td>
+    <td>${porte}</td>
+    <td>${nomePet}</td>
+    <td>${caracteristicas.join(', ')}</td>
+    <td>${endereco}</td>
+    <td>Pendente</td>
+    <td>
+      <button class="edit-btn">Editar</button>
+      <button class="delete-btn">Excluir</button>
+    </td>
+  `;
+
+  // Limpa os campos do formulário após adicionar na tabela
+  document.getElementById('formato').reset();
+});
+
+function exibirRacas() {
+  var especieSelecionada = document.getElementById("especie").value;
+  var racaSelect = document.getElementById("raca");
+
+  // Limpar as opções existentes
+  racaSelect.innerHTML = "";
+
+  // Adicionar as opções de raças de acordo com a espécie selecionada
+  if (especieSelecionada === "cachorro") {
+    var racasCachorro = ["Labrador Retriever",
+      "Pastor Alemão",
+     "Bulldog Francês",
+      "Golden Retriever",
+      "Beagle",
+      "Poodle",
+      "Boxer",
+      "Rottweiler",
+      "Yorkshire Terrier",
+      "Dachshund (Teckel)",
+      "Border Collie",
+      "Schnauzer",
+      "Chihuahua",
+      "Bichon Frisé",
+      "Husky Siberiano",
+      "Doberman Pinscher",
+      "Shih Tzu",
+      "Cavalier King Charles Spaniel",
+      "Bulldog Inglês",
+      "Maltese",
+      "Pug",
+      "Staffordshire Bull Terrier",
+      "Great Dane",
+      "Cocker Spaniel",
+      "Australian Shepherd",
+      "Bernese Mountain Dog",
+      "Boston Terrier",
+      "West Highland White Terrier",
+      "Scottish Terrier",
+      "Newfoundland",
+    "Outro" ]; // Exemplo de raças de cachorros
+
+    for (var i = 0; i < racasCachorro.length; i++) {
+      var option = document.createElement("option");
+      option.text = racasCachorro[i];
+      racaSelect.add(option);
+    }
+  } else if (especieSelecionada === "gato") {
+    var racasGato = ["Siamês",
+      "Persa",
+      "Maine Coon",
+      "Ragdoll",
+      "Bengal",
+      "British Shorthair",
+      "Sphynx",
+      "Exotic Shorthair",
+      "Abissínio",
+      "Scottish Fold (Dobra Escocesa)",
+     " Siamese Oriental (Oriental de Pelo Curto)",
+     " Birmanês",
+     " Himalaio",
+      "Devon Rex",
+      "Azul Russo",
+      "Savannah",
+     " Tonquinês",
+      "Maine Coon",
+    "Outro"]; // Exemplo de raças de gatos
+
+    for (var i = 0; i < racasGato.length; i++) {
+      var option = document.createElement("option");
+      option.text = racasGato[i];
+      racaSelect.add(option);
+    }
+  }
+}
